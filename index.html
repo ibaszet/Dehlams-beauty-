@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dehlams Beauty | Bab Ezzouar, Alger</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500;1,600&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bronze:#8C6239;--gold:#C69C6D;--champ:#E5C49F;--cream:#F7EBE1;--navy:#1A2332;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--cream);color:var(--navy);line-height:1.6}
+html[lang=ar] body{font-family:'Noto Naskh Arabic',Inter,sans-serif;line-height:1.9}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{font-family:'Noto Naskh Arabic',serif;font-weight:600}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:12px;color:var(--bronze)}
+.sub{max-width:560px;opacity:.75;margin-bottom:32px}
+.btn{display:inline-block;padding:14px 26px;border-radius:50px;font-weight:600;border:1.5px solid var(--gold);cursor:pointer;font:inherit;font-weight:600;transition:.25s}
+.btn.p{background:var(--bronze);border-color:var(--bronze);color:var(--cream)}
+.btn.p:hover{background:var(--navy);border-color:var(--navy)}
+.btn.s{background:transparent;color:var(--cream)}
+.btn.s:hover{background:var(--champ);color:var(--navy)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(26,35,50,.92);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--champ);font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem}
+.logo img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.links{display:flex;gap:22px;color:var(--cream);font-size:.9rem}
+.links a:hover{color:var(--gold)}
+.lang{background:none;border:1px solid var(--gold);color:var(--champ);border-radius:20px;padding:5px 14px;cursor:pointer;font:inherit;font-size:.85rem}
+@media(max-width:760px){.links{display:none}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;background:var(--navy);color:var(--cream);overflow:hidden;padding:100px 0 60px}
+.hbg{position:absolute;inset:0;display:grid;grid-template:1fr 1fr/1fr 1fr;opacity:.38}
+.hbg img{width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(26,35,50,.95) 20%,rgba(26,35,50,.45))}
+html[dir=rtl] .hero:after{background:linear-gradient(-100deg,rgba(26,35,50,.95) 20%,rgba(26,35,50,.45))}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-style:italic;font-size:clamp(2.6rem,9vw,5.2rem);color:var(--champ);margin-bottom:16px}
+html[lang=ar] .hero h1{font-style:normal}
+.hero p{max-width:480px;font-size:1.1rem;margin-bottom:28px;opacity:.9}
+.hb{display:flex;gap:12px;flex-wrap:wrap}
+/* stats */
+.stats{background:var(--bronze);color:var(--cream);padding:34px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;text-align:center}
+.stats b{display:block;font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--champ)}
+.stats span{font-size:.88rem;opacity:.85}
+@media(min-width:760px){.stats .wrap{grid-template-columns:repeat(4,1fr)}}
+/* about */
+.about .wrap{display:grid;gap:36px;align-items:center}
+@media(min-width:800px){.about .wrap{grid-template-columns:1.3fr 1fr}}
+.about p{margin-bottom:14px;max-width:560px}
+.card{background:var(--navy);color:var(--cream);border-radius:var(--r);padding:30px;text-align:center}
+.card img{width:130px;height:130px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid var(--gold)}
+.card h3{color:var(--champ);font-size:1.5rem}
+.card p{opacity:.8;margin:4px auto 10px}
+.card a{color:var(--champ);font-weight:600;direction:ltr;display:inline-block}
+/* services */
+.services{background:#fff8f2}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.sv{background:var(--cream);border:1px solid var(--champ);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:8px;transition:.25s}
+.sv:hover{border-color:var(--gold);transform:translateY(-3px)}
+.sv svg{width:34px;height:34px;stroke:var(--bronze);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.sv h3{font-size:1.2rem}
+.sv small{opacity:.7;flex:1}
+.pr{color:var(--bronze);font-weight:600}
+.tag{font-size:.75rem;border:1px solid var(--gold);border-radius:20px;padding:2px 10px;align-self:flex-start;color:var(--bronze)}
+/* gallery */
+.gal{display:grid;gap:10px;grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
+.gal img:first-child{grid-row:span 2;grid-column:span 2}
+@media(min-width:800px){.gal{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.gal img:first-child{grid-column:auto;grid-row:span 2}}
+/* booking */
+.booking{background:var(--navy);color:var(--cream)}
+.booking h2{color:var(--champ)}
+form{display:grid;gap:14px;max-width:560px}
+.f label{display:block;font-size:.88rem;margin-bottom:4px;color:var(--champ)}
+.f input,.f select{width:100%;padding:13px;border-radius:10px;border:1.5px solid transparent;background:var(--cream);font:inherit;color:var(--navy)}
+.f.err input,.f.err select{border-color:#e07a5f}
+.em{color:#f0a493;font-size:.8rem;min-height:1em;display:block}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn.p:disabled{opacity:.6;cursor:wait}
+.spin{display:none;width:16px;height:16px;border:2px solid var(--cream);border-top-color:transparent;border-radius:50%;animation:sp .7s linear infinite;vertical-align:middle;margin-inline-start:8px}
+.load .spin{display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+#ok{display:none;text-align:center;max-width:560px;padding:40px 20px;border:1px solid var(--gold);border-radius:var(--r)}
+#ok svg{width:56px;height:56px;stroke:var(--champ);fill:none;stroke-width:2;margin-bottom:12px}
+#ok p{margin:10px 0 20px;opacity:.85}
+#fe{color:#f0a493}
+/* info */
+.info .wrap{display:grid;gap:28px}
+@media(min-width:800px){.info .wrap{grid-template-columns:repeat(3,1fr)}}
+.info h3{color:var(--bronze);margin-bottom:10px;font-size:1.3rem}
+.info li{list-style:none;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--champ);padding:6px 0}
+.info a.l{display:block;padding:4px 0;direction:ltr}
+html[dir=rtl] .info a.l{text-align:right}
+footer{background:var(--navy);color:var(--champ);text-align:center;padding:26px 20px;font-size:.88rem}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a href="#top" class="logo"><img src="logo.png" alt="Dehlams Beauty">Dehlams Beauty</a>
+<div class="links"><a href="#about" data-i="n1"></a><a href="#services" data-i="n2"></a><a href="#gallery" data-i="n3"></a><a href="#booking" data-i="n4"></a><a href="#info" data-i="n5"></a></div>
+<button class="lang" id="lb" aria-label="Langue / اللغة">العربية</button>
+</div></nav>
+
+<header class="hero" id="top">
+<div class="hbg"><img src="img1.jpg" alt=""><img src="img2.jpg" alt=""><img src="img3.jpg" alt=""><img src="img4.jpg" alt=""></div>
+<div class="wrap">
+<h1>Dehlams Beauty</h1>
+<p data-i="hs"></p>
+<div class="hb"><a href="#booking" class="btn p" data-i="b1"></a><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/213558609806">WhatsApp</a></div>
+</div></header>
+
+<div class="stats"><div class="wrap">
+<div><b>9</b><span data-i="s1"></span></div>
+<div><b>6/7</b><span data-i="s2"></span></div>
+<div><b>09h - 16h</b><span data-i="s3"></span></div>
+<div><b>Bab Ezzouar</b><span data-i="s4"></span></div>
+</div></div>
+
+<section class="about" id="about"><div class="wrap">
+<div class="rv"><h2 data-i="ah"></h2><p data-i="a1"></p><p data-i="a2"></p></div>
+<div class="card rv"><img src="logo.png" alt="Lamia Dehilis"><h3>Lamia Dehilis</h3><p data-i="role"></p><a href="tel:+213558609806">+213 558 60 98 06</a></div>
+</div></section>
+
+<section class="services" id="services"><div class="wrap">
+<h2 class="rv" data-i="sh"></h2><p class="sub rv" data-i="ss"></p>
+<div class="grid" id="sg"></div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+<h2 class="rv" data-i="gh"></h2>
+<div class="gal rv"><img src="img1.jpg" alt="" loading="lazy"><img src="img2.jpg" alt="" loading="lazy"><img src="img3.jpg" alt="" loading="lazy"><img src="img4.jpg" alt="" loading="lazy"><img src="img5.jpg" alt="" loading="lazy"></div>
+</div></section>
+
+<section class="booking" id="booking"><div class="wrap">
+<h2 class="rv" data-i="bh"></h2><p class="sub rv" data-i="bs"></p>
+<form id="bf" novalidate class="rv">
+<div class="f"><label for="nm" data-i="fn"></label><input id="nm" autocomplete="name"><span class="em"></span></div>
+<div class="f"><label for="ph" data-i="fp"></label><input id="ph" type="tel" inputmode="tel" placeholder="05 58 60 98 06" autocomplete="tel"><span class="em"></span></div>
+<div class="f"><label for="sv" data-i="fs"></label><select id="sv"></select><span class="em"></span></div>
+<div class="row">
+<div class="f"><label for="dt" data-i="fd"></label><input id="dt" type="date"><span class="em"></span></div>
+<div class="f"><label for="tm" data-i="ft"></label><select id="tm"></select><span class="em"></span></div>
+</div>
+<span id="fe"></span>
+<button class="btn p" id="sb" type="submit"><span data-i="send"></span><i class="spin"></i></button>
+</form>
+<div id="ok"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.5 3.5L17 9"/></svg><h3 data-i="okh"></h3><p data-i="okp"></p><a class="btn s" id="wa" target="_blank" rel="noopener" data-i="okw"></a></div>
+</div></section>
+
+<section class="info" id="info"><div class="wrap">
+<div class="rv"><h3 data-i="ih"></h3><ul><li><span data-i="d1"></span><b>09:00 - 16:00</b></li><li><span data-i="d2"></span><b data-i="cl"></b></li></ul></div>
+<div class="rv"><h3 data-i="ch"></h3><a class="l" href="tel:+213558609806">+213 558 60 98 06</a><a class="l" target="_blank" rel="noopener" href="https://wa.me/213558609806">WhatsApp</a><a class="l" target="_blank" rel="noopener" href="https://maps.app.goo.gl/j6zxwrBdDkAkgUM89" data-i="loc"></a></div>
+<div class="rv"><h3 data-i="rh"></h3><a class="l" target="_blank" rel="noopener" href="https://www.instagram.com/dehlamss_beauty?vrfl=a3loZjZjeHNxMA==">Instagram</a></div>
+</div></section>
+
+<footer>&copy; 2026 Dehlams Beauty - Bab Ezzouar, Alger</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+const PROJECT='dehlams-beauty',WA='213558609806';
+firebase.initializeApp({
+ apiKey:"AIzaSyB1cJLjpq7qyfxmOcX8kf-SpsxB8WvTMZk",
+ authDomain:"dehlams-beauty.firebaseapp.com",
+ databaseURL:"https://dehlams-beauty-default-rtdb.firebaseio.com", // verifiez dans Firebase > Realtime Database
+ projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",
+ messagingSenderId:"1084905496655",appId:"1:1084905496655:web:eee179d1e04877b6164a3a"});
+const db=firebase.database();
+
+const SV=[
+ {fr:'Nails',ar:'أظافر',p:2000,i:'M8 21V9a4 4 0 018 0v12M8 13h8',t:['Manucure','Nail art']},
+ {fr:'Soin des Pieds',ar:'عناية بالقدمين',p:2500,i:'M12 3c-3 4-5 7-5 10a5 5 0 0010 0c0-3-2-6-5-10z',t:['Pedicure']},
+ {fr:'Soin du Visage',ar:'عناية بالوجه',p:3000,i:'M12 3a7 7 0 00-7 7c0 5 4 10 7 11 3-1 7-6 7-11a7 7 0 00-7-7zM9 10h.01M15 10h.01M9.5 15c1.5 1 3.5 1 5 0',t:['Nettoyage','Eclat']},
+ {fr:'Soin a Froid (cheveux)',ar:'علاج بارد للشعر',p:6000,i:'M12 2v20M4.9 7l14.2 10M4.9 17L19.1 7',t:['Cheveux']},
+ {fr:'Soin Capillaire',ar:'علاج الشعر',p:8000,i:'M5 3c4 3 4 15 0 18M12 3c4 3 4 15 0 18M19 3c-2 3-2 15 0 18',t:['Cheveux','Reparation']},
+ {fr:'Coupe + Brushing',ar:'قص + برشينغ',p:1000,i:'M6 6a3 3 0 100 6 3 3 0 000-6zM6 18a3 3 0 100-6M8.5 10.5L20 4M8.5 13.5L20 20',t:['Coiffure']},
+ {fr:'Ondule + Maquillage',ar:'تمويج + مكياج',p:6000,i:'M3 9c3-4 6 4 9 0s6 4 9 0M3 16c3-4 6 4 9 0s6 4 9 0',t:['Coiffure','Maquillage']},
+ {fr:'Maquillage Invitee + Coiffure',ar:'مكياج وتسريحة للمدعوات',p:6000,i:'M5 21l6-10 3 3-6 7zM14 8l3-5 4 4-5 3',t:['Soiree']},
+ {fr:'Mariee',ar:'العروس',p:16000,i:'M4 8l4 4 4-7 4 7 4-4-2 11H6z',t:['Forfait complet']}
+];
+const T={fr:{n1:'A propos',n2:'Services',n3:'Galerie',n4:'Reservation',n5:'Infos',hs:"Coiffure, maquillage et soins de beaute a Bab Ezzouar, Alger. Prenez rendez-vous en quelques secondes.",b1:'Reserver',s1:'services',s2:'jours par semaine',s3:'horaires',s4:'Alger',ah:'Le salon',a1:"Dehlams Beauty est un salon de beaute a Bab Ezzouar, dedie a la coiffure, aux soins et au maquillage, du quotidien aux grandes occasions.",a2:"Chaque rendez-vous est pense pour vous: ecoute, soin du detail et resultat qui vous ressemble.",role:'Fondatrice',sh:'Nos services',ss:'Tarifs a partir de, selon la longueur et le type de prestation.',gh:'Galerie',bh:'Reserver un rendez-vous',bs:'Remplissez le formulaire: nous vous confirmons sur WhatsApp.',fn:'Nom complet',fp:'Telephone',fs:'Service',fd:'Date',ft:'Heure',send:'Envoyer la reservation',okh:'Reservation envoyee',okp:'Merci. Nous vous confirmons votre rendez-vous tres vite sur WhatsApp.',okw:'Ouvrir WhatsApp',ih:'Horaires',d1:'Samedi - Jeudi',d2:'Vendredi',cl:'Ferme',ch:'Contact',loc:'Bab Ezzouar, Alger (Google Maps)',rh:'Reseaux',from:'A partir de',da:'DA',pick:'Choisir un service',e1:'Entrez votre nom (2 caracteres minimum).',e2:'Numero algerien invalide (ex: 0558609806).',e3:'Choisissez un service.',e4:'Choisissez une date.',e5:'Le salon est ferme le vendredi.',e6:'Choisissez une heure.',e7:"Echec de l'envoi. Reessayez ou ecrivez-nous sur WhatsApp.",msg:(b)=>`Bonjour Dehlams Beauty, je souhaite reserver:\nNom: ${b.name}\nService: ${b.service}\nDate: ${b.date}\nHeure: ${b.time}\nTel: ${b.phone}`},
+ar:{n1:'عن الصالون',n2:'الخدمات',n3:'المعرض',n4:'الحجز',n5:'معلومات',hs:'تصفيف الشعر، مكياج وعناية بالجمال في باب الزوار، الجزائر. احجزي موعدك في ثوان.',b1:'احجزي الآن',s1:'خدمات',s2:'أيام في الأسبوع',s3:'أوقات العمل',s4:'الجزائر',ah:'عن الصالون',a1:'ديهلامس بيوتي صالون تجميل في باب الزوار، مخصص لتصفيف الشعر والعناية والمكياج، من الإطلالة اليومية إلى المناسبات الكبرى.',a2:'كل موعد مصمم من أجلك: إصغاء واهتمام بالتفاصيل ونتيجة تشبهك.',role:'المؤسسة',sh:'خدماتنا',ss:'الأسعار ابتداءً من، حسب الطول ونوع الخدمة.',gh:'المعرض',bh:'احجزي موعدا',bs:'املئي الاستمارة وسنؤكد لك عبر واتساب.',fn:'الاسم الكامل',fp:'الهاتف',fs:'الخدمة',fd:'التاريخ',ft:'الساعة',send:'إرسال الحجز',okh:'تم إرسال الحجز',okp:'شكرا لك. سنؤكد موعدك قريبا عبر واتساب.',okw:'افتحي واتساب',ih:'أوقات العمل',d1:'السبت - الخميس',d2:'الجمعة',cl:'مغلق',ch:'اتصال',loc:'باب الزوار، الجزائر (خرائط جوجل)',rh:'التواصل',from:'ابتداءً من',da:'دج',pick:'اختاري خدمة',e1:'أدخلي اسمك (حرفان على الأقل).',e2:'رقم جزائري غير صالح (مثال: 0558609806).',e3:'اختاري خدمة.',e4:'اختاري تاريخا.',e5:'الصالون مغلق يوم الجمعة.',e6:'اختاري ساعة.',e7:'فشل الإرسال. أعيدي المحاولة أو راسلينا على واتساب.',msg:(b)=>`مرحبا ديهلامس بيوتي، أريد حجز موعد:\nالاسم: ${b.name}\nالخدمة: ${b.service}\nالتاريخ: ${b.date}\nالساعة: ${b.time}\nالهاتف: ${b.phone}`}};
+let L='fr';
+const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g,' ');
+function render(){
+ const t=T[L];document.documentElement.lang=L;document.documentElement.dir=L=='ar'?'rtl':'ltr';
+ document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t[e.dataset.i]);
+ $('#lb').textContent=L=='fr'?'العربية':'Francais';
+ $('#sg').innerHTML=SV.map(s=>`<article class="sv rv in"><svg viewBox="0 0 24 24"><path d="${s.i}"/></svg><h3>${s[L]}</h3><small>${t.from}</small><span class="pr">${fmt(s.p)} ${t.da}</span>${s.t.map(x=>`<span class="tag">${x}</span>`).join('')}</article>`).join('');
+ const sv=$('#sv'),cur=sv.value;
+ sv.innerHTML=`<option value="">${t.pick}</option>`+SV.map(s=>`<option value="${s.fr}">${s[L]} - ${fmt(s.p)} ${t.da}</option>`).join('');sv.value=cur;
+}
+$('#lb').onclick=()=>{L=L=='fr'?'ar':'fr';render()};
+const tm=$('#tm');tm.innerHTML='<option value="">--:--</option>';
+for(let h=9;h<16;h++)['00','30'].forEach(m=>tm.insertAdjacentHTML('beforeend',`<option>${String(h).padStart(2,'0')}:${m}</option>`));
+const today=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);$('#dt').min=today;
+render();
+
+function bad(id,msg){const f=$(id).closest('.f');f.classList.add('err');f.querySelector('.em').textContent=T[L][msg];return 1}
+$('#bf').addEventListener('submit',async e=>{
+ e.preventDefault();
+ document.querySelectorAll('.f').forEach(f=>{f.classList.remove('err');f.querySelector('.em').textContent=''});$('#fe').textContent='';
+ const name=$('#nm').value.trim(),phone=$('#ph').value.replace(/[\s.\-()]/g,''),service=$('#sv').value,date=$('#dt').value,time=$('#tm').value;
+ let er=0;
+ if(name.length<2)er+=bad('#nm','e1');
+ if(!/^(0|\+213|00213)[567]\d{8}$/.test(phone))er+=bad('#ph','e2');
+ if(!service)er+=bad('#sv','e3');
+ if(!date||date<today)er+=bad('#dt','e4');else if(new Date(date+'T12:00').getDay()===5)er+=bad('#dt','e5');
+ if(!time)er+=bad('#tm','e6');
+ if(er)return;
+ const b=$('#sb');b.disabled=true;b.classList.add('load');
+ const id='bk_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+ const rec={id,name,phone,service,date,time,appointment:date+' '+time,status:'new',source:'website',createdAt:new Date().toISOString()};
+ try{
+  await db.ref(PROJECT+'/bookings/'+id).set(rec);
+  const url='https://wa.me/'+WA+'?text='+encodeURIComponent(T[L].msg(rec));
+  $('#wa').href=url;$('#bf').style.display='none';$('#ok').style.display='block';
+  window.open(url,'_blank');
+ }catch(x){console.error(x);$('#fe').textContent=T[L].e7}
+ b.disabled=false;b.classList.remove('load');
+});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
