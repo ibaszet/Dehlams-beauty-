@@ -8,54 +8,61 @@
 <link rel="icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <style>
-:root{--bronze:#8C6239;--gold:#C69C6D;--champ:#E5C49F;--cream:#F7EBE1;--navy:#1A2332}
+:root{--bronze:#8C6239;--gold:#C69C6D;--sand:#E5C49F;--cream:#F7EBE1;--navy:#1A2332}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,sans-serif;background:var(--cream);color:var(--navy);min-height:100vh}
+body{font-family:Inter,sans-serif;background:var(--cream);color:#2b2f38;min-height:100vh}
 button,input,select,textarea{font:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 #login{display:flex;min-height:100vh;align-items:center;justify-content:center;background:var(--navy);padding:20px}
 .lb{background:var(--cream);border-radius:16px;padding:34px 26px;width:100%;max-width:340px;text-align:center}
 .lb img{width:84px;height:84px;border-radius:50%;object-fit:cover;margin:0 auto 12px;border:2px solid var(--gold)}
 .lb h1{font-family:'Playfair Display',serif;font-style:italic;color:var(--bronze);margin-bottom:18px}
-.lb input{width:100%;padding:13px;border-radius:10px;border:1.5px solid var(--champ);margin-bottom:12px;text-align:center}
-.shake{animation:sh .4s}
-@keyframes sh{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+.lb input{width:100%;padding:13px;border-radius:10px;border:1.5px solid var(--sand);margin-bottom:10px}
+.shake{animation:sh .4s}@keyframes sh{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
 .btn{border:none;border-radius:10px;padding:12px 16px;cursor:pointer;font-weight:600;background:var(--bronze);color:var(--cream)}
-.lb .btn{width:100%}
-.btn:hover{background:var(--navy)}
+.btn:hover{background:var(--navy)}.lb .btn{width:100%}
 #err{color:#b3402a;font-size:.85rem;min-height:1.2em;margin-top:8px}
-#app{display:none;max-width:760px;margin:0 auto;padding-bottom:80px}
-header{background:var(--navy);color:var(--champ);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+#app{display:none}
+header{background:var(--navy);color:var(--sand);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:6;gap:10px}
 header b{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem}
-header button{background:none;border:1px solid var(--gold);color:var(--champ);border-radius:20px;padding:4px 12px;cursor:pointer;font-size:.85rem}
-.tabs{display:flex;background:#fff;border-bottom:1px solid var(--champ);position:sticky;top:54px;z-index:4}
-.tabs button{flex:1;padding:14px 6px;border:none;background:none;cursor:pointer;font-weight:500;color:var(--navy);border-bottom:3px solid transparent}
+.live{display:flex;align-items:center;gap:6px;font-size:.8rem}
+.live i{width:9px;height:9px;border-radius:50%;background:#3ddc84;animation:pu 1.6s infinite}
+@keyframes pu{50%{box-shadow:0 0 0 6px rgba(61,220,132,0)}0%{box-shadow:0 0 0 0 rgba(61,220,132,.6)}}
+header button{background:none;border:1px solid var(--gold);color:var(--sand);border-radius:20px;padding:4px 12px;cursor:pointer;font-size:.85rem}
+.tabs{display:flex;background:#fff;border-bottom:1px solid var(--sand);position:sticky;top:52px;z-index:5;max-width:1000px;margin:0 auto}
+.tabs button{flex:1;padding:14px 6px;border:none;background:none;cursor:pointer;font-weight:500;border-bottom:3px solid transparent}
 .tabs button.on{color:var(--bronze);border-color:var(--bronze);font-weight:600}
-.pane{display:none;padding:16px}.pane.on{display:block}
-h2{font-size:1rem;margin:14px 0 8px;color:var(--bronze)}
+.pane{display:none;padding:16px;max-width:1000px;margin:0 auto}.pane.on{display:block}
+.two{display:grid;gap:18px}@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+h2{font-size:1rem;margin-bottom:10px;color:var(--bronze)}
 .cnt{display:inline-block;background:var(--bronze);color:var(--cream);border-radius:12px;padding:1px 9px;font-size:.8rem;margin-inline-start:6px}
-.bk{background:#fff;border:1px solid var(--champ);border-radius:12px;padding:14px;margin-bottom:12px}
+.bk{background:#fff;border:1px solid var(--sand);border-radius:12px;padding:14px;margin-bottom:12px}
 .bk.st-new{border-left:4px solid var(--bronze)}
 .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
-.top b{font-size:1.05rem}
-.top span.sv{color:var(--bronze);font-size:.9rem}
+.top span.sv{color:var(--bronze);font-size:.88rem}
 .bd{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-.b{font-size:.72rem;border-radius:20px;padding:2px 9px;font-weight:600;background:var(--champ)}
+.b{font-size:.72rem;border-radius:20px;padding:2px 9px;font-weight:600;background:var(--sand)}
 .b.new{background:var(--bronze);color:#fff}.b.confirmed{background:#3d7a52;color:#fff}.b.done{background:var(--navy);color:#fff}.b.cancelled{background:#b3402a;color:#fff}
-.meta{font-size:.88rem;margin:8px 0;line-height:1.6}
-.meta a{color:var(--bronze);font-weight:600}
+.meta{font-size:.87rem;margin:8px 0;line-height:1.6}.meta a{color:var(--bronze);font-weight:600}.meta small{opacity:.6}
 .note{background:var(--cream);border-radius:8px;padding:6px 10px;font-size:.85rem;margin-bottom:8px}
 .act{display:flex;flex-wrap:wrap;gap:6px}
-.act button,.act a{font-size:.8rem;border:1px solid var(--gold);background:#fff;border-radius:8px;padding:7px 10px;cursor:pointer;color:var(--navy);text-decoration:none}
+.act button,.act a{font-size:.8rem;border:1px solid var(--gold);background:#fff;border-radius:8px;padding:7px 10px;cursor:pointer;color:#1A2332;text-decoration:none}
 .act .ok{background:#3d7a52;border-color:#3d7a52;color:#fff}.act .dn{background:var(--navy);border-color:var(--navy);color:#fff}.act .del{color:#b3402a;border-color:#b3402a}
-.tools{display:flex;gap:8px;margin-bottom:12px}
-.tools input,.tools select{padding:11px;border-radius:10px;border:1.5px solid var(--champ);background:#fff}
-.tools input{flex:1;min-width:0}
-.fm{display:grid;gap:12px}
-.fm label{font-size:.85rem;font-weight:500;display:block;margin-bottom:3px}
-.fm input,.fm select,.fm textarea{width:100%;padding:12px;border-radius:10px;border:1.5px solid var(--champ);background:#fff}
+.tools{display:flex;gap:8px;margin-bottom:8px}
+.tools input,.tools select,.fm input,.fm textarea,.pb{padding:12px;border-radius:10px;border:1.5px solid var(--sand);background:#fff;width:100%}
+.tools input{flex:1;min-width:0}.tools select{width:auto}
+#rc{font-size:.85rem;opacity:.7;margin-bottom:10px}
+.fm{display:grid;gap:12px;max-width:560px}.fm label{font-size:.85rem;font-weight:500;display:block;margin-bottom:3px}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pk{position:relative}.pb{text-align:start;cursor:pointer}
+#pl{display:none;position:absolute;z-index:8;left:0;right:0;top:100%;margin-top:4px;background:#fff;border:1px solid var(--sand);border-radius:10px;max-height:260px;overflow:auto;padding:8px 14px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+#pl.open{display:block}#pl b{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin:8px 0 2px}
+#pl label{display:flex;gap:10px;align-items:center;padding:5px 0;margin:0;font-weight:400}#pl input{width:auto}
+#ch{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.service-chip{background:var(--bronze);color:var(--cream);border-radius:20px;padding:3px 6px 3px 12px;font-size:.8rem;display:flex;gap:6px;align-items:center}
+.service-chip button{background:none;border:none;color:inherit;cursor:pointer;font-size:1rem}
 .empty{text-align:center;opacity:.6;padding:30px 0}
-#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--champ);padding:10px 20px;border-radius:20px;font-size:.9rem;opacity:0;transition:.3s;pointer-events:none}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--sand);padding:10px 20px;border-radius:20px;font-size:.9rem;opacity:0;transition:.3s;pointer-events:none;z-index:20}
 #toast.show{opacity:1}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -66,19 +73,16 @@ h2{font-size:1rem;margin:14px 0 8px;color:var(--bronze)}
 <button class="btn" type="submit">Se connecter</button><div id="err"></div></form></div>
 
 <div id="app">
-<header><b>Dehlams Admin</b><button id="lo">Quitter</button></header>
-<div class="tabs"><button class="on" data-t="dash">Tableau de bord</button><button data-t="all">Toutes</button><button data-t="add">Ajouter</button></div>
-
-<div class="pane on" id="dash"><h2>Nouvelles<span class="cnt" id="c1">0</span></h2><div id="l1"></div><h2>Confirmees<span class="cnt" id="c2">0</span></h2><div id="l2"></div></div>
-
-<div class="pane" id="all"><div class="tools"><input id="q" type="search" placeholder="Nom ou telephone"><select id="sf"><option value="">Tous</option><option value="new">Nouvelle</option><option value="confirmed">Confirmee</option><option value="done">Terminee</option><option value="cancelled">Annulee</option></select></div><div id="l3"></div></div>
-
+<header><b>Dehlams Admin</b><span class="live"><i></i>Live Sync</span><button id="lo">Deconnexion</button></header>
+<div class="tabs"><button class="on" data-t="dash">Tableau de bord</button><button data-t="all">Toutes</button><button data-t="add">+ Ajouter</button></div>
+<div class="pane on" id="dash"><div class="two"><div><h2>Nouvelles<span class="cnt" id="c1">0</span></h2><div id="l1"></div></div><div><h2>Confirmees<span class="cnt" id="c2">0</span></h2><div id="l2"></div></div></div></div>
+<div class="pane" id="all"><div class="tools"><input id="q" type="search" placeholder="Nom ou telephone"><select id="sf"><option value="">Tous</option><option value="new">Nouvelle</option><option value="confirmed">Confirmee</option><option value="done">Terminee</option><option value="cancelled">Annulee</option></select></div><div id="rc"></div><div id="l3"></div></div>
 <div class="pane" id="add"><form class="fm" id="af">
 <div><label for="an">Nom</label><input id="an" required></div>
 <div><label for="ap">Telephone</label><input id="ap" type="tel" inputmode="tel" required></div>
-<div><label for="as">Service</label><select id="as"></select></div>
-<div class="tools" style="margin:0"><div style="flex:1"><label for="ad">Date</label><input id="ad" type="date" required></div><div style="flex:1"><label for="at">Heure</label><input id="at" type="time" value="09:00" required></div></div>
-<div><label for="ano">Note</label><textarea id="ano" rows="3"></textarea></div>
+<div><label>Services</label><div class="pk"><button type="button" class="pb" id="pb"></button><div id="pl"></div></div><div id="ch"></div></div>
+<div class="r2"><div><label for="ad">Date</label><input id="ad" type="date" required></div><div><label for="at">Heure</label><input id="at" type="time" min="09:00" max="16:00" value="09:00" required></div></div>
+<div><label for="ano">Note (optionnel)</label><textarea id="ano" rows="3"></textarea></div>
 <button class="btn" type="submit">Ajouter la reservation</button></form></div>
 </div>
 <div id="toast"></div>
@@ -86,63 +90,68 @@ h2{font-size:1rem;margin:14px 0 8px;color:var(--bronze)}
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
-const PASS='dehlams2026',PROJECT='dehlams-beauty'; // CHANGEZ le mot de passe
-firebase.initializeApp({
- apiKey:"AIzaSyB1cJLjpq7qyfxmOcX8kf-SpsxB8WvTMZk",authDomain:"dehlams-beauty.firebaseapp.com",
- databaseURL:"https://dehlams-beauty-default-rtdb.firebaseio.com", // verifiez dans Firebase > Realtime Database
- projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",messagingSenderId:"1084905496655",appId:"1:1084905496655:web:eee179d1e04877b6164a3a"});
-const ref=firebase.database().ref(PROJECT+'/bookings');
-const $=s=>document.querySelector(s);
-const SVS=['Nails','Soin des Pieds','Soin du Visage','Soin a Froid (cheveux)','Soin Capillaire','Coupe + Brushing','Ondule + Maquillage','Maquillage Invitee + Coiffure','Mariee'];
-$('#as').innerHTML=SVS.map(s=>`<option>${s}</option>`).join('');
+const P='dehlams-beauty';
+const PASS='1234'; // mot de passe de test: changez-le ici
+firebase.initializeApp({apiKey:"AIzaSyB1cJLjpq7qyfxmOcX8kf-SpsxB8WvTMZk",authDomain:"dehlams-beauty.firebaseapp.com",
+ databaseURL:"https://dehlams-beauty-default-rtdb.europe-west1.firebasedatabase.app", // a verifier dans Firebase > Realtime Database
+ projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",messagingSenderId:"1084905496655",appId:"1:1084905496655:web:6b9190a6fe619c59164a3a"});
+const db=firebase.database(),ref=db.ref(P+'/bookings'),$=s=>document.querySelector(s);
+const SV=[['Ongles et soins','Nails','Soin des Pieds','Soin du Visage'],['Cheveux','Soin a Froid (cheveux)','Soin Capillaire','Coupe + Brushing'],['Maquillage et coiffure','Ondule + Maquillage','Maquillage Invitee + Coiffure','Mariee']];
 const SL={new:'Nouvelle',confirmed:'Confirmee',done:'Terminee',cancelled:'Annulee'};
-let data=[],started=false;
-
-function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
-function enter(){$('#login').style.display='none';$('#app').style.display='block';if(!started){started=true;listen()}}
-if(sessionStorage.getItem('dbAuth')==='1')enter();
-$('#lf').onsubmit=e=>{e.preventDefault();
- if($('#pw').value===PASS){sessionStorage.setItem('dbAuth','1');enter()}
- else{const b=$('.lb');b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');$('#err').textContent='Mot de passe incorrect.';$('#pw').value=''}};
-$('#lo').onclick=()=>{sessionStorage.removeItem('dbAuth');location.reload()};
-document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
- document.querySelectorAll('.tabs button,.pane').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#'+b.dataset.t).classList.add('on')});
-
-function listen(){ref.on('value',s=>{const v=s.val()||{};data=Object.keys(v).map(k=>({...v[k],id:v[k].id||k,_k:k}));
- data.sort((a,b)=>(b.createdAt||'').localeCompare(a.createdAt||''));draw()},e=>toast('Erreur de connexion Firebase'))}
-
+let data=[],on=false,sel=new Set();
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function fail(m){const b=$('.lb');b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');$('#err').textContent=m;$('#pw').value=''}
+
+function enter(){$('#login').style.display='none';$('#app').style.display='block';if(!on){on=true;listen()}}
+if(sessionStorage.getItem('dbAuth')==='1')enter();
+$('#lf').onsubmit=e=>{e.preventDefault();$('#err').textContent='';
+ if($('#pw').value===PASS){sessionStorage.setItem('dbAuth','1');enter()}else fail('Mot de passe incorrect.')};
+$('#lo').onclick=()=>{sessionStorage.removeItem('dbAuth');location.reload()};
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button,.pane').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#'+b.dataset.t).classList.add('on')});
+
+function listen(){ref.on('value',s=>{const v=s.val()||{};data=Object.keys(v).map(k=>({...v[k],_k:k}));
+ data.sort((a,b)=>(+b.createdAt||0)-(+a.createdAt||0));draw()},()=>toast('Erreur de connexion Firebase'))}
 const tel=p=>{let d=String(p).replace(/\D/g,'');if(d.startsWith('00213'))d=d.slice(2);else if(d.startsWith('0'))d='213'+d.slice(1);return d};
-function fd(iso){if(!iso)return '-';const d=new Date(iso);return isNaN(d)?iso:d.toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})}
-function card(b){
- const st=b.status||'new',wm=`Bonjour ${b.name}, votre rendez-vous chez Dehlams Beauty (${b.service}) le ${b.appointment||b.date+' '+b.time} est ${st=='confirmed'?'confirme':'bien recu'}. Merci !`;
- return `<div class="bk st-${st}"><div class="top"><div><b>${esc(b.name)}</b><br><span class="sv">${esc(b.service)}</span></div>
- <div class="bd"><span class="b ${st}">${SL[st]||st}</span><span class="b">${b.source=='website'?'Web':'Manuel'}</span></div></div>
- <div class="meta">Tel: <a href="tel:${esc(b.phone)}">${esc(b.phone)}</a><br>RDV: <b>${esc(b.appointment||b.date+' '+b.time)}</b><br>Recue: ${fd(b.createdAt)}</div>
+const fd=t=>{if(!t)return '-';const d=new Date(t);return isNaN(d)?t:d.toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})};
+function card(b){const st=b.status||'new',k=esc(b._k),ap=b.appointment||(b.date+' '+b.time);
+ const wm=`Bonjour ${b.name}, votre rendez-vous chez Dehlams Beauty (${b.service}) le ${ap} est ${st=='confirmed'?'confirme':'bien recu'}. Merci !`;
+ return `<div class="bk st-${st}"><div class="top"><div><b>${esc(b.name)}</b><br><span class="sv">${esc(b.service)}</span></div><div class="bd"><span class="b ${st}">${SL[st]||st}</span><span class="b">${b.source=='website'?'Web':'Manuel'}</span></div></div>
+ <div class="meta">Tel: <a href="tel:${esc(b.phone)}">${esc(b.phone)}</a><br>RDV: <b>${esc(ap)}</b><br>Recue: ${fd(b.createdAt)} <small>#${esc(String(b.id||b._k).slice(-6))}</small></div>
  ${b.note?`<div class="note">${esc(b.note)}</div>`:''}
- <div class="act">${st=='new'?`<button class="ok" data-a="confirmed" data-k="${esc(b._k)}">Confirmer</button>`:''}
- ${st=='confirmed'?`<button class="dn" data-a="done" data-k="${esc(b._k)}">Terminer</button>`:''}
- ${st!='cancelled'&&st!='done'?`<button data-a="cancelled" data-k="${esc(b._k)}">Annuler</button>`:''}
- <a href="tel:${esc(b.phone)}">Appeler</a><a target="_blank" rel="noopener" href="https://wa.me/${tel(b.phone)}?text=${encodeURIComponent(wm)}">WhatsApp</a>
- <button class="del" data-a="del" data-k="${esc(b._k)}">Supprimer</button></div></div>`}
-function list(arr){return arr.length?arr.map(card).join(''):'<div class="empty">Aucune reservation</div>'}
-function draw(){
- const n=data.filter(b=>(b.status||'new')=='new'),c=data.filter(b=>b.status=='confirmed');
+ <div class="act">${st=='new'?`<button class="ok" data-a="confirmed" data-k="${k}">Confirmer</button>`:''}${st=='confirmed'?`<button class="dn" data-a="done" data-k="${k}">Termine</button>`:''}${st!='cancelled'&&st!='done'?`<button data-a="cancelled" data-k="${k}">Annuler</button>`:''}
+ <a href="tel:${esc(b.phone)}">Appeler</a><a target="_blank" rel="noopener" href="https://wa.me/${tel(b.phone)}?text=${encodeURIComponent(wm)}">WhatsApp</a><button class="del" data-a="del" data-k="${k}">Supprimer</button></div></div>`}
+const list=a=>a.length?a.map(card).join(''):'<div class="empty">Aucune reservation</div>';
+function draw(){const n=data.filter(b=>(b.status||'new')=='new'),c=data.filter(b=>b.status=='confirmed');
  $('#c1').textContent=n.length;$('#c2').textContent=c.length;$('#l1').innerHTML=list(n);$('#l2').innerHTML=list(c);
- const q=$('#q').value.trim().toLowerCase(),sf=$('#sf').value;
- $('#l3').innerHTML=list(data.filter(b=>(!sf||(b.status||'new')==sf)&&(!q||(b.name||'').toLowerCase().includes(q)||String(b.phone).replace(/\s/g,'').includes(q.replace(/\s/g,'')))))}
+ const q=$('#q').value.trim().toLowerCase(),sf=$('#sf').value,r=data.filter(b=>(!sf||(b.status||'new')==sf)&&(!q||(b.name||'').toLowerCase().includes(q)||String(b.phone).replace(/\s/g,'').includes(q.replace(/\s/g,''))));
+ $('#rc').textContent=r.length+' resultat(s)';$('#l3').innerHTML=list(r)}
 $('#q').oninput=$('#sf').onchange=draw;
-$('#app').addEventListener('click',async e=>{const b=e.target.closest('button[data-a]');if(!b)return;
- const k=b.dataset.k,a=b.dataset.a;
- try{if(a=='del'){if(!confirm('Supprimer cette reservation ?'))return;await ref.child(k).remove();toast('Supprimee')}
- else{await ref.child(k).update({status:a});toast(SL[a])}}catch(x){toast('Echec: verifiez les regles Firebase')}});
+
+const slot=b=>b.date&&b.time?db.ref(`${P}/takenSlots/${b.date}_${b.time}`):null;
+$('#app').addEventListener('click',async e=>{const btn=e.target.closest('button[data-a]');if(!btn)return;
+ const b=data.find(x=>x._k==btn.dataset.k),a=btn.dataset.a;if(!b)return;
+ try{if(a=='del'){if(!confirm('Supprimer cette reservation ?'))return;await ref.child(b._k).remove();await slot(b)?.remove();toast('Supprimee')}
+ else{await ref.child(b._k).update({status:a});if(a=='cancelled')await slot(b)?.remove();toast(SL[a])}}catch(x){console.error(x);toast('Echec: verifiez les regles Firebase')}});
+
+/* multi-select */
+function pk(){$('#pl').innerHTML=SV.map(g=>`<b>${g[0]}</b>`+g.slice(1).map(s=>`<label><input type="checkbox" value="${s}" ${sel.has(s)?'checked':''}>${s}</label>`).join('')).join('');chips()}
+function chips(){$('#pb').textContent=sel.size?sel.size+' service(s)':'Choisir un ou plusieurs services';
+ $('#ch').innerHTML=[...sel].map(s=>`<span class="service-chip">${s}<button type="button" data-rm="${esc(s)}" aria-label="retirer">&times;</button></span>`).join('')}
+$('#pb').onclick=e=>{e.stopPropagation();$('#pl').classList.toggle('open')};$('#pl').onclick=e=>e.stopPropagation();
+$('#pl').onchange=e=>{e.target.checked?sel.add(e.target.value):sel.delete(e.target.value);chips()};
+document.addEventListener('click',e=>{$('#pl').classList.remove('open');const r=e.target.closest('[data-rm]');if(r){sel.delete(r.dataset.rm);pk()}});
+pk();
 
 $('#af').onsubmit=async e=>{e.preventDefault();
- const phone=$('#ap').value.replace(/[\s.\-()]/g,'');
+ const phone=$('#ap').value.replace(/[\s.\-()]/g,''),date=$('#ad').value,time=$('#at').value;
  if(!/^(0|\+213|00213)[567]\d{8}$/.test(phone))return toast('Telephone invalide');
- const id='bk_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),date=$('#ad').value,time=$('#at').value;
- try{await ref.child(id).set({id,name:$('#an').value.trim(),phone,service:$('#as').value,date,time,appointment:date+' '+time,note:$('#ano').value.trim(),status:'confirmed',source:'manual',createdAt:new Date().toISOString()});
- e.target.reset();toast('Reservation ajoutee');document.querySelector('[data-t=dash]').click()}catch(x){toast('Echec de l\'ajout')}};
+ if(!sel.size)return toast('Choisissez un service');
+ const id='bk_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+ try{const tr=await db.ref(`${P}/takenSlots/${date}_${time}`).transaction(c=>c?undefined:true);
+  if(!tr.committed)return toast('Creneau deja pris');
+  await ref.child(id).set({id,name:$('#an').value.trim(),phone,service:[...sel].join(' • '),date,time,appointment:date+' '+time,note:$('#ano').value.trim(),status:'new',source:'manual',createdAt:firebase.database.ServerValue.TIMESTAMP});
+  e.target.reset();sel.clear();pk();toast('Reservation ajoutee');document.querySelector('[data-t=dash]').click()}catch(x){console.error(x);toast("Echec de l'ajout")}};
 </script>
 </body>
 </html>

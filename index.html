@@ -217,8 +217,8 @@ footer{background:#10161f;color:var(--sand);text-align:center;padding:24px;font-
 <script>
 const P='dehlams-beauty',WA='213558609806';
 firebase.initializeApp({apiKey:"AIzaSyB1cJLjpq7qyfxmOcX8kf-SpsxB8WvTMZk",authDomain:"dehlams-beauty.firebaseapp.com",
- databaseURL:"https://dehlams-beauty-default-rtdb.firebaseio.com", // a verifier dans Firebase > Realtime Database
- projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",messagingSenderId:"1084905496655",appId:"1:1084905496655:web:eee179d1e04877b6164a3a"});
+ databaseURL:"https://dehlams-beauty-default-rtdb.europe-west1.firebasedatabase.app", // a verifier dans Firebase > Realtime Database
+ projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",messagingSenderId:"1084905496655",appId:"1:1084905496655:web:6b9190a6fe619c59164a3a"});
 const db=firebase.database(),$=s=>document.querySelector(s);
 const C=[{fr:'Ongles et soins',ar:'الأظافر والعناية'},{fr:'Cheveux',ar:'الشعر'},{fr:'Maquillage et coiffure',ar:'مكياج وتسريحات'}];
 const SV=[
@@ -271,6 +271,7 @@ for(let h=9;h<16;h++)['00','30'].forEach(m=>tm.insertAdjacentHTML('beforeend',`<
 const today=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);$('#dt').min=today;
 render();
 
+const to=(p,ms=8000)=>Promise.race([p,new Promise((_,r)=>setTimeout(()=>r(new Error('timeout: verifiez databaseURL et les regles Firebase')),ms))]);
 function bad(id,m){const f=$(id).closest('.f');f.classList.add('err');f.querySelector('.em').textContent=T[L][m];return 1}
 $('#bf').addEventListener('submit',async e=>{
  e.preventDefault();
@@ -289,14 +290,14 @@ $('#bf').addEventListener('submit',async e=>{
  const rec={id,name,phone,service,date,time,appointment:date+' '+time,status:'new',source:'website'};
  try{
   const slot=db.ref(`${P}/takenSlots/${date}_${time}`);
-  const tr=await slot.transaction(c=>c?undefined:true); // verrou atomique anti double-reservation
+  const tr=await to(slot.transaction(c=>c?undefined:true)); // verrou atomique anti double-reservation
   if(!tr.committed){if(w)w.close();$('#fe').textContent=T[L].e7;throw 0}
-  try{await db.ref(`${P}/bookings/${id}`).set({...rec,createdAt:firebase.database.ServerValue.TIMESTAMP})}
-  catch(x){await slot.remove();throw x}
+  try{await to(db.ref(`${P}/bookings/${id}`).set({...rec,createdAt:firebase.database.ServerValue.TIMESTAMP}))}
+  catch(x){slot.remove().catch(()=>{});throw x}
   const url=`https://wa.me/${WA}?text=`+encodeURIComponent(T[L].msg(rec));
   $('#wa').href=url;$('#bf').style.display='none';$('#ok').style.display='block';
   if(w)w.location=url;
- }catch(x){if(x!==0){console.error(x);if(w)w.close();$('#fe').textContent=T[L].e8}}
+ }catch(x){if(x!==0){console.error(x);try{if(w)w.close()}catch(_){}$('#fe').textContent=T[L].e8+' ['+(x.code||x.message)+']'}}
  b.disabled=false;b.classList.remove('load');
 });
 /* reveal + count-up */
