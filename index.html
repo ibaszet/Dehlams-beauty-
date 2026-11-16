@@ -6,235 +6,304 @@
 <title>Dehlams Beauty | Bab Ezzouar, Alger</title>
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500;1,600&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bronze:#8C6239;--gold:#C69C6D;--champ:#E5C49F;--cream:#F7EBE1;--navy:#1A2332;--r:14px}
+:root{--bronze:#8C6239;--gold:#C69C6D;--sand:#E5C49F;--cream:#F7EBE1;--cream2:#EFDECF;--navy:#1A2332;--txt:#2b2f38}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:var(--cream);color:var(--navy);line-height:1.6}
-html[lang=ar] body{font-family:'Noto Naskh Arabic',Inter,sans-serif;line-height:1.9}
-h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
-html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{font-family:'Noto Naskh Arabic',serif;font-weight:600}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
+body{font-family:Inter,sans-serif;background:var(--cream);color:var(--txt);line-height:1.65}
+html[lang=ar] body,html[lang=ar] button,html[lang=ar] input,html[lang=ar] select{font-family:'Noto Naskh Arabic',Inter,sans-serif}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15;color:var(--navy)}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{font-family:'Noto Naskh Arabic',serif;font-weight:600;font-style:normal!important}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-section{padding:72px 0}
-h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:12px;color:var(--bronze)}
-.sub{max-width:560px;opacity:.75;margin-bottom:32px}
-.btn{display:inline-block;padding:14px 26px;border-radius:50px;font-weight:600;border:1.5px solid var(--gold);cursor:pointer;font:inherit;font-weight:600;transition:.25s}
-.btn.p{background:var(--bronze);border-color:var(--bronze);color:var(--cream)}
-.btn.p:hover{background:var(--navy);border-color:var(--navy)}
-.btn.s{background:transparent;color:var(--cream)}
-.btn.s:hover{background:var(--champ);color:var(--navy)}
+section{padding:80px 0}.alt{background:var(--cream2)}
+.eb{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);font-weight:600;margin-bottom:10px;display:block}
+html[lang=ar] .eb{letter-spacing:0}
+h2{font-size:clamp(1.9rem,5vw,2.7rem);font-style:italic;margin-bottom:12px}
+.sub{max-width:560px;opacity:.75;margin-bottom:34px}
+.btn{display:inline-block;padding:14px 26px;border-radius:50px;font-weight:600;border:1.5px solid var(--gold);cursor:pointer;transition:.25s;background:none;color:inherit}
+.btn.p{background:var(--bronze);border-color:var(--bronze);color:var(--cream)}.btn.p:hover{background:var(--navy);border-color:var(--navy)}
+.btn.s{color:var(--cream)}.btn.s:hover{background:var(--sand);color:var(--navy)}
+.btn svg{width:18px;height:18px;vertical-align:-3px;margin-inline-end:8px;fill:currentColor}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 /* nav */
-nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(26,35,50,.92);backdrop-filter:blur(8px)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-.logo{display:flex;align-items:center;gap:10px;color:var(--champ);font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem}
+nav{position:fixed;inset:0 0 auto;z-index:60;transition:.3s}
+nav.sc{background:rgba(26,35,50,.9);backdrop-filter:blur(10px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--sand);font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem}
 .logo img{width:38px;height:38px;border-radius:50%;object-fit:cover}
-.links{display:flex;gap:22px;color:var(--cream);font-size:.9rem}
+.links{display:flex;gap:20px;color:var(--cream);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+html[lang=ar] .links{letter-spacing:0;font-size:.95rem;text-transform:none}
 .links a:hover{color:var(--gold)}
-.lang{background:none;border:1px solid var(--gold);color:var(--champ);border-radius:20px;padding:5px 14px;cursor:pointer;font:inherit;font-size:.85rem}
-@media(max-width:760px){.links{display:none}}
+.nr{display:flex;gap:10px;align-items:center}
+.lang,.burger{background:none;border:1px solid var(--gold);color:var(--sand);border-radius:20px;padding:5px 14px;cursor:pointer;font-size:.85rem}
+.burger{display:none;width:40px;height:34px;padding:0}
+.burger svg{width:20px;height:20px;stroke:var(--sand);stroke-width:2;fill:none}
+#dr{position:fixed;inset:0;background:var(--navy);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.8rem;color:var(--sand);transform:translateY(-100%);transition:.4s;visibility:hidden}
+html[lang=ar] #dr{font-family:'Noto Naskh Arabic',serif;font-style:normal}
+#dr.open{transform:none;visibility:visible}
+#dr button{position:absolute;top:18px;inset-inline-end:20px;background:none;border:none;color:var(--sand);font-size:2rem;cursor:pointer}
+@media(max-width:900px){.links{display:none}.burger{display:block}}
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;background:var(--navy);color:var(--cream);overflow:hidden;padding:100px 0 60px}
-.hbg{position:absolute;inset:0;display:grid;grid-template:1fr 1fr/1fr 1fr;opacity:.38}
-.hbg img{width:100%;height:100%;object-fit:cover}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(26,35,50,.95) 20%,rgba(26,35,50,.45))}
-html[dir=rtl] .hero:after{background:linear-gradient(-100deg,rgba(26,35,50,.95) 20%,rgba(26,35,50,.45))}
-.hero .wrap{position:relative;z-index:2}
-.hero h1{font-style:italic;font-size:clamp(2.6rem,9vw,5.2rem);color:var(--champ);margin-bottom:16px}
-html[lang=ar] .hero h1{font-style:normal}
-.hero p{max-width:480px;font-size:1.1rem;margin-bottom:28px;opacity:.9}
-.hb{display:flex;gap:12px;flex-wrap:wrap}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;background:var(--navy);color:var(--cream);overflow:hidden;padding:100px 0 70px}
+.hbg{position:absolute;inset:0;display:grid;grid-template:1fr 1fr/1fr 1fr}.hbg img{width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,35,50,.7),rgba(26,35,50,.88))}
+.hero .wrap{position:relative;z-index:2;text-align:center}
+.hero h1{color:var(--sand);font-style:italic;font-size:clamp(2.8rem,10vw,5.6rem);margin:8px 0 16px}
+.hero p.l{max-width:520px;margin:0 auto 28px;font-size:1.1rem;opacity:.9}
+.hb{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.scr{position:absolute;bottom:18px;left:50%;width:1px;height:46px;background:rgba(229,196,159,.3);z-index:2;overflow:hidden}
+.scr:after{content:"";display:block;width:1px;height:16px;background:var(--sand);animation:sd 1.8s infinite}
+@keyframes sd{from{transform:translateY(-16px)}to{transform:translateY(46px)}}
+.hero .eb{color:var(--sand)}
 /* stats */
-.stats{background:var(--bronze);color:var(--cream);padding:34px 0}
-.stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;text-align:center}
-.stats b{display:block;font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--champ)}
-.stats span{font-size:.88rem;opacity:.85}
+.stats{background:var(--navy);color:var(--cream);padding:38px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;text-align:center}
+.stats b{display:block;font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--sand);direction:ltr}
+.stats span{font-size:.85rem;opacity:.8}
 @media(min-width:760px){.stats .wrap{grid-template-columns:repeat(4,1fr)}}
 /* about */
-.about .wrap{display:grid;gap:36px;align-items:center}
-@media(min-width:800px){.about .wrap{grid-template-columns:1.3fr 1fr}}
+.about .wrap{display:grid;gap:44px;align-items:center}
+@media(min-width:850px){.about .wrap{grid-template-columns:1.3fr 1fr}}
 .about p{margin-bottom:14px;max-width:560px}
-.card{background:var(--navy);color:var(--cream);border-radius:var(--r);padding:30px;text-align:center}
-.card img{width:130px;height:130px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid var(--gold)}
-.card h3{color:var(--champ);font-size:1.5rem}
-.card p{opacity:.8;margin:4px auto 10px}
-.card a{color:var(--champ);font-weight:600;direction:ltr;display:inline-block}
-/* services */
-.services{background:#fff8f2}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.sv{background:var(--cream);border:1px solid var(--champ);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:8px;transition:.25s}
-.sv:hover{border-color:var(--gold);transform:translateY(-3px)}
-.sv svg{width:34px;height:34px;stroke:var(--bronze);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.sv h3{font-size:1.2rem}
-.sv small{opacity:.7;flex:1}
-.pr{color:var(--bronze);font-weight:600}
-.tag{font-size:.75rem;border:1px solid var(--gold);border-radius:20px;padding:2px 10px;align-self:flex-start;color:var(--bronze)}
+.pf{position:relative;max-width:340px;margin:0 auto;padding:30px 24px;background:#fff8f2;text-align:center;box-shadow:0 20px 40px -20px rgba(26,35,50,.3)}
+.pf:before{content:"";position:absolute;inset:12px -12px -12px 12px;border:1.5px solid var(--gold);z-index:-1}
+html[dir=rtl] .pf:before{inset:12px 12px -12px -12px}
+.pf img{width:150px;height:150px;border-radius:50%;object-fit:cover;margin:0 auto 14px}
+.pf h3{font-size:1.5rem;font-style:italic}.pf p{margin:2px auto 0;color:var(--bronze);font-size:.9rem}
+.pf hr{border:none;height:1px;background:var(--sand);margin:14px auto;width:60px}
+.pf a{font-weight:600;direction:ltr;display:inline-block}
+/* cards */
+.grid{display:grid;gap:1px;background:var(--sand);border:1px solid var(--sand);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.sp{margin-top:28px}
+.sv{background:var(--cream);padding:28px 24px;display:flex;flex-direction:column;gap:8px}
+.alt .sv{background:var(--cream2)}
+.sv svg{width:32px;height:32px;stroke:var(--bronze);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.sv h3{font-size:1.25rem;font-style:italic}.sv small{opacity:.7;flex:1}
+.pr{color:var(--bronze);font-family:'Playfair Display',serif;font-size:1.15rem}
+.tag{font-size:.72rem;border:1px solid var(--gold);border-radius:20px;padding:1px 10px;color:var(--bronze)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.sv .btn{padding:8px 18px;font-size:.85rem;align-self:flex-start;margin-top:6px;color:var(--bronze)}.sv .btn:hover{background:var(--bronze);color:var(--cream)}
 /* gallery */
-.gal{display:grid;gap:10px;grid-template-columns:1fr 1fr;grid-auto-rows:170px}
-.gal img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
-.gal img:first-child{grid-row:span 2;grid-column:span 2}
-@media(min-width:800px){.gal{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.gal img:first-child{grid-column:auto;grid-row:span 2}}
+.dk{background:var(--navy);color:var(--cream)}.dk h2{color:var(--sand)}.dk .eb{color:var(--gold)}
+.gal{display:grid;gap:10px;grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal img:first-child{grid-column:span 2;grid-row:span 2}
+.gal img.x{display:none}.gal.all img.x{display:block}
+@media(min-width:800px){.gal{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:210px}.gal img:first-child{grid-column:auto}}
+/* tarifs */
+#ts{width:100%;max-width:420px;padding:13px 18px;border-radius:50px;border:1.5px solid var(--gold);background:#fff8f2;margin-bottom:26px}
+.tc h3{font-size:1.3rem;font-style:italic;color:var(--bronze);margin:22px 0 6px;border-bottom:1px solid var(--sand);padding-bottom:6px}
+.tr{display:flex;align-items:baseline;gap:8px;padding:8px 0}
+.tr i{flex:1;border-bottom:1.5px dotted var(--gold);transform:translateY(-4px)}
+.tr b{font-family:'Playfair Display',serif;color:var(--bronze);white-space:nowrap}
+#te{display:none;text-align:center;opacity:.7;padding:20px}
 /* booking */
-.booking{background:var(--navy);color:var(--cream)}
-.booking h2{color:var(--champ)}
-form{display:grid;gap:14px;max-width:560px}
-.f label{display:block;font-size:.88rem;margin-bottom:4px;color:var(--champ)}
-.f input,.f select{width:100%;padding:13px;border-radius:10px;border:1.5px solid transparent;background:var(--cream);font:inherit;color:var(--navy)}
-.f.err input,.f.err select{border-color:#e07a5f}
-.em{color:#f0a493;font-size:.8rem;min-height:1em;display:block}
+.bg{display:grid;gap:40px}@media(min-width:850px){.bg{grid-template-columns:1fr 1.1fr}}
+.bl li{list-style:none;padding:10px 0;border-bottom:1px solid var(--sand)}
+form{display:grid;gap:14px}
+.f label{display:block;font-size:.82rem;margin-bottom:4px;color:var(--bronze);font-weight:600}
+.f input,.f select,.pk>button{width:100%;padding:13px;border-radius:10px;border:1.5px solid var(--sand);background:#fff8f2;color:var(--txt);text-align:start}
+.f.err input,.f.err select,.f.err .pk>button{border-color:#c0462c}
+.em{color:#c0462c;font-size:.8rem;min-height:1em;display:block}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.btn.p:disabled{opacity:.6;cursor:wait}
+.pk{position:relative}.pk>button{cursor:pointer}
+#pl{display:none;position:absolute;z-index:10;inset-inline:0;top:100%;margin-top:4px;background:#fff;border:1px solid var(--sand);border-radius:10px;max-height:280px;overflow:auto;padding:8px 14px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+#pl.open{display:block}
+#pl b{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin:8px 0 2px}
+#pl label{display:flex;gap:10px;align-items:center;padding:6px 0;margin:0;font-weight:400;color:var(--txt);font-size:.92rem;cursor:pointer}
+#pl input{width:auto}
+#ch{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.service-chip{background:var(--bronze);color:var(--cream);border-radius:20px;padding:3px 6px 3px 12px;font-size:.8rem;display:flex;gap:6px;align-items:center}
+.service-chip button{background:none;border:none;color:inherit;cursor:pointer;font-size:1rem;line-height:1}
 .spin{display:none;width:16px;height:16px;border:2px solid var(--cream);border-top-color:transparent;border-radius:50%;animation:sp .7s linear infinite;vertical-align:middle;margin-inline-start:8px}
-.load .spin{display:inline-block}
+.load .spin{display:inline-block}.btn:disabled{opacity:.6;cursor:wait}
 @keyframes sp{to{transform:rotate(360deg)}}
-#ok{display:none;text-align:center;max-width:560px;padding:40px 20px;border:1px solid var(--gold);border-radius:var(--r)}
-#ok svg{width:56px;height:56px;stroke:var(--champ);fill:none;stroke-width:2;margin-bottom:12px}
-#ok p{margin:10px 0 20px;opacity:.85}
-#fe{color:#f0a493}
+#ok{display:none;text-align:center;padding:40px 20px;border:1px solid var(--gold)}
+#ok svg{width:54px;height:54px;stroke:var(--bronze);fill:none;stroke-width:2;margin-bottom:10px}
+#ok p{margin:10px 0 20px}
+#fe{color:#c0462c;font-size:.9rem}
+/* rules */
+.rg{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.rc{display:flex;gap:16px;background:#fff8f2;padding:20px;border:1px solid var(--sand)}
+.ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--bronze);display:flex;align-items:center;justify-content:center}
+.ic svg{width:22px;height:22px;stroke:var(--cream);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.rc h3{font-size:1.1rem;font-style:italic;margin-bottom:2px}.rc p{font-size:.88rem;opacity:.75}
 /* info */
-.info .wrap{display:grid;gap:28px}
-@media(min-width:800px){.info .wrap{grid-template-columns:repeat(3,1fr)}}
-.info h3{color:var(--bronze);margin-bottom:10px;font-size:1.3rem}
-.info li{list-style:none;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--champ);padding:6px 0}
-.info a.l{display:block;padding:4px 0;direction:ltr}
-html[dir=rtl] .info a.l{text-align:right}
-footer{background:var(--navy);color:var(--champ);text-align:center;padding:26px 20px;font-size:.88rem}
-/* reveal */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+.info{background:var(--navy);color:var(--cream)}.info h3{color:var(--sand);font-style:italic;margin-bottom:12px}
+.ig{display:grid;gap:30px}@media(min-width:800px){.ig{grid-template-columns:repeat(3,1fr)}}
+.info li{list-style:none;display:flex;justify-content:space-between;border-bottom:1px solid rgba(229,196,159,.2);padding:6px 0}
+.info a.l{display:block;padding:4px 0;direction:ltr}html[dir=rtl] .info a.l{text-align:right}
+.soc{display:flex;gap:10px;margin-top:6px}
+.soc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.soc a:hover{background:var(--gold)}.soc svg{width:19px;height:19px;stroke:var(--sand);fill:none;stroke-width:1.6}
+footer{background:#10161f;color:var(--sand);text-align:center;padding:24px;font-size:.85rem}
+.fw{position:fixed;bottom:20px;inset-inline-end:20px;z-index:55;width:54px;height:54px;border-radius:50%;background:#25a35a;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.fw svg{width:28px;height:28px;fill:#fff}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
 </style>
 </head>
 <body>
-<nav><div class="wrap">
-<a href="#top" class="logo"><img src="logo.png" alt="Dehlams Beauty">Dehlams Beauty</a>
-<div class="links"><a href="#about" data-i="n1"></a><a href="#services" data-i="n2"></a><a href="#gallery" data-i="n3"></a><a href="#booking" data-i="n4"></a><a href="#info" data-i="n5"></a></div>
-<button class="lang" id="lb" aria-label="Langue / اللغة">العربية</button>
+<nav id="nv"><div class="wrap">
+<a href="#top" class="logo"><img src="logo.png" alt="">Dehlams Beauty</a>
+<div class="links"><a href="#about" data-i="n1"></a><a href="#services" data-i="n2"></a><a href="#tarifs" data-i="n3"></a><a href="#gallery" data-i="n4"></a><a href="#booking" data-i="n5"></a><a href="#reglement" data-i="n6"></a><a href="#contact" data-i="n7"></a></div>
+<div class="nr"><button class="lang" id="lb" aria-label="Langue / اللغة"></button><button class="burger" id="bg" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
 </div></nav>
+<div id="dr"><button id="dx" aria-label="Close">&times;</button><a href="#about" data-i="n1"></a><a href="#services" data-i="n2"></a><a href="#tarifs" data-i="n3"></a><a href="#gallery" data-i="n4"></a><a href="#booking" data-i="n5"></a><a href="#reglement" data-i="n6"></a><a href="#contact" data-i="n7"></a></div>
 
 <header class="hero" id="top">
 <div class="hbg"><img src="img1.jpg" alt=""><img src="img2.jpg" alt=""><img src="img3.jpg" alt=""><img src="img4.jpg" alt=""></div>
-<div class="wrap">
-<h1>Dehlams Beauty</h1>
-<p data-i="hs"></p>
-<div class="hb"><a href="#booking" class="btn p" data-i="b1"></a><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/213558609806">WhatsApp</a></div>
-</div></header>
+<div class="wrap"><span class="eb" data-i="loc0"></span><h1>Dehlams Beauty</h1><p class="l" data-i="hs"></p>
+<div class="hb"><a href="#booking" class="btn p" data-i="b1"></a><a class="btn s" target="_blank" rel="noopener" href="https://wa.me/213558609806"><svg viewBox="0 0 24 24"><path id="wp" d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600-.3.300c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.700-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg>WhatsApp</a></div></div>
+<div class="scr"></div></header>
 
 <div class="stats"><div class="wrap">
-<div><b>9</b><span data-i="s1"></span></div>
-<div><b>6/7</b><span data-i="s2"></span></div>
-<div><b>09h - 16h</b><span data-i="s3"></span></div>
-<div><b>Bab Ezzouar</b><span data-i="s4"></span></div>
+<div><b data-n="9">0</b><span data-i="s1"></span></div><div><b data-n="6">0</b><span data-i="s2"></span></div>
+<div><b data-n="7" data-x="h">0</b><span data-i="s3"></span></div><div><b data-n="1000" data-x="+">0</b><span data-i="s4"></span></div>
 </div></div>
 
 <section class="about" id="about"><div class="wrap">
-<div class="rv"><h2 data-i="ah"></h2><p data-i="a1"></p><p data-i="a2"></p></div>
-<div class="card rv"><img src="logo.png" alt="Lamia Dehilis"><h3>Lamia Dehilis</h3><p data-i="role"></p><a href="tel:+213558609806">+213 558 60 98 06</a></div>
+<div class="rv"><span class="eb" data-i="n1"></span><h2 data-i="ah"></h2><p data-i="a1"></p><p data-i="a2"></p></div>
+<div class="pf rv"><img src="logo.png" alt="Lamia Dehilis"><h3>Lamia Dehilis</h3><p data-i="role"></p><hr><a href="tel:+213558609806">+213 558 60 98 06</a></div>
 </div></section>
 
-<section class="services" id="services"><div class="wrap">
-<h2 class="rv" data-i="sh"></h2><p class="sub rv" data-i="ss"></p>
-<div class="grid" id="sg"></div>
+<section class="alt" id="services"><div class="wrap">
+<span class="eb" data-i="n2"></span><h2 class="rv" data-i="sh"></h2><p class="sub rv" data-i="ss"></p>
+<div class="grid rv" id="g1"></div><div class="grid sp rv" id="g2"></div>
 </div></section>
 
-<section id="gallery"><div class="wrap">
-<h2 class="rv" data-i="gh"></h2>
-<div class="gal rv"><img src="img1.jpg" alt="" loading="lazy"><img src="img2.jpg" alt="" loading="lazy"><img src="img3.jpg" alt="" loading="lazy"><img src="img4.jpg" alt="" loading="lazy"><img src="img5.jpg" alt="" loading="lazy"></div>
+<section id="tarifs"><div class="wrap">
+<span class="eb" data-i="n3"></span><h2 class="rv" data-i="th"></h2>
+<input id="ts" type="search" aria-label="search"><div class="tc" id="tc"></div><p id="te" data-i="none"></p>
 </div></section>
 
-<section class="booking" id="booking"><div class="wrap">
-<h2 class="rv" data-i="bh"></h2><p class="sub rv" data-i="bs"></p>
-<form id="bf" novalidate class="rv">
+<section class="dk" id="gallery"><div class="wrap">
+<span class="eb" data-i="n4"></span><h2 class="rv" data-i="gh"></h2>
+<div class="gal rv" id="ga"><img src="img1.jpg" alt="" loading="lazy"><img src="img2.jpg" alt="" loading="lazy"><img src="img3.jpg" alt="" loading="lazy"><img src="img4.jpg" alt="" loading="lazy"><img src="img5.jpg" alt="" loading="lazy"><img class="x" src="img6.jpg" alt="" loading="lazy"><img class="x" src="img7.jpg" alt="" loading="lazy"><img class="x" src="img8.jpg" alt="" loading="lazy"></div>
+<p style="text-align:center;margin-top:24px"><button class="btn s" id="gt" data-i="gm"></button></p>
+</div></section>
+
+<section class="alt" id="booking"><div class="wrap"><div class="bg">
+<div class="rv"><span class="eb" data-i="n5"></span><h2 data-i="bh"></h2><p class="sub" data-i="bs"></p>
+<ul class="bl"><li data-i="r1"></li><li data-i="r2"></li><li data-i="r3"></li></ul></div>
+<div class="rv"><form id="bf" novalidate>
 <div class="f"><label for="nm" data-i="fn"></label><input id="nm" autocomplete="name"><span class="em"></span></div>
 <div class="f"><label for="ph" data-i="fp"></label><input id="ph" type="tel" inputmode="tel" placeholder="05 58 60 98 06" autocomplete="tel"><span class="em"></span></div>
-<div class="f"><label for="sv" data-i="fs"></label><select id="sv"></select><span class="em"></span></div>
-<div class="row">
-<div class="f"><label for="dt" data-i="fd"></label><input id="dt" type="date"><span class="em"></span></div>
-<div class="f"><label for="tm" data-i="ft"></label><select id="tm"></select><span class="em"></span></div>
-</div>
+<div class="f"><label data-i="fs"></label><div class="pk"><button type="button" id="pb" aria-expanded="false"></button><div id="pl"></div></div><div id="ch"></div><span class="em"></span></div>
+<div class="row"><div class="f"><label for="dt" data-i="fd"></label><input id="dt" type="date"><span class="em"></span></div>
+<div class="f"><label for="tm" data-i="ft"></label><select id="tm"></select><span class="em"></span></div></div>
 <span id="fe"></span>
-<button class="btn p" id="sb" type="submit"><span data-i="send"></span><i class="spin"></i></button>
-</form>
-<div id="ok"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.5 3.5L17 9"/></svg><h3 data-i="okh"></h3><p data-i="okp"></p><a class="btn s" id="wa" target="_blank" rel="noopener" data-i="okw"></a></div>
-</div></section>
+<button class="btn p" id="sb" type="submit"><span data-i="send"></span><i class="spin"></i></button></form>
+<div id="ok"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.5 3.5L17 9"/></svg><h3 data-i="okh"></h3><p data-i="okp"></p><a class="btn p" id="wa" target="_blank" rel="noopener" data-i="okw"></a></div></div>
+</div></div></section>
 
-<section class="info" id="info"><div class="wrap">
-<div class="rv"><h3 data-i="ih"></h3><ul><li><span data-i="d1"></span><b>09:00 - 16:00</b></li><li><span data-i="d2"></span><b data-i="cl"></b></li></ul></div>
-<div class="rv"><h3 data-i="ch"></h3><a class="l" href="tel:+213558609806">+213 558 60 98 06</a><a class="l" target="_blank" rel="noopener" href="https://wa.me/213558609806">WhatsApp</a><a class="l" target="_blank" rel="noopener" href="https://maps.app.goo.gl/j6zxwrBdDkAkgUM89" data-i="loc"></a></div>
-<div class="rv"><h3 data-i="rh"></h3><a class="l" target="_blank" rel="noopener" href="https://www.instagram.com/dehlamss_beauty?vrfl=a3loZjZjeHNxMA==">Instagram</a></div>
-</div></section>
+<section id="reglement"><div class="wrap">
+<span class="eb" data-i="n6"></span><h2 class="rv" data-i="rh"></h2><p class="sub rv" data-i="rs"></p>
+<div class="rg" id="rg"></div></div></section>
 
-<footer>&copy; 2026 Dehlams Beauty - Bab Ezzouar, Alger</footer>
+<section class="info" id="contact"><div class="wrap ig">
+<div><h3 data-i="ih"></h3><ul><li><span data-i="d1"></span><b>09:00 - 16:00</b></li><li><span data-i="d2"></span><b data-i="cl"></b></li></ul></div>
+<div><h3 data-i="ch"></h3><a class="l" href="tel:+213558609806">+213 558 60 98 06</a><a class="l" target="_blank" rel="noopener" href="https://maps.app.goo.gl/j6zxwrBdDkAkgUM89" data-i="loc"></a></div>
+<div><h3 data-i="rsx"></h3><div class="soc"><a target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/dehlamss_beauty?vrfl=a3loZjZjeHNxMA=="><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></svg></a></div></div>
+</div></section>
+<footer>&copy; <span id="yr"></span> Dehlams Beauty - Bab Ezzouar, Alger</footer>
+<a class="fw" target="_blank" rel="noopener" aria-label="WhatsApp" href="https://wa.me/213558609806"><svg viewBox="0 0 24 24"><use href="#wp"/></svg></a>
 
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
-const PROJECT='dehlams-beauty',WA='213558609806';
-firebase.initializeApp({
- apiKey:"AIzaSyB1cJLjpq7qyfxmOcX8kf-SpsxB8WvTMZk",
- authDomain:"dehlams-beauty.firebaseapp.com",
- databaseURL:"https://dehlams-beauty-default-rtdb.firebaseio.com", // verifiez dans Firebase > Realtime Database
- projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",
- messagingSenderId:"1084905496655",appId:"1:1084905496655:web:eee179d1e04877b6164a3a"});
-const db=firebase.database();
-
+const P='dehlams-beauty',WA='213558609806';
+firebase.initializeApp({apiKey:"AIzaSyB1cJLjpq7qyfxmOcX8kf-SpsxB8WvTMZk",authDomain:"dehlams-beauty.firebaseapp.com",
+ databaseURL:"https://dehlams-beauty-default-rtdb.firebaseio.com", // a verifier dans Firebase > Realtime Database
+ projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",messagingSenderId:"1084905496655",appId:"1:1084905496655:web:eee179d1e04877b6164a3a"});
+const db=firebase.database(),$=s=>document.querySelector(s);
+const C=[{fr:'Ongles et soins',ar:'الأظافر والعناية'},{fr:'Cheveux',ar:'الشعر'},{fr:'Maquillage et coiffure',ar:'مكياج وتسريحات'}];
 const SV=[
- {fr:'Nails',ar:'أظافر',p:2000,i:'M8 21V9a4 4 0 018 0v12M8 13h8',t:['Manucure','Nail art']},
- {fr:'Soin des Pieds',ar:'عناية بالقدمين',p:2500,i:'M12 3c-3 4-5 7-5 10a5 5 0 0010 0c0-3-2-6-5-10z',t:['Pedicure']},
- {fr:'Soin du Visage',ar:'عناية بالوجه',p:3000,i:'M12 3a7 7 0 00-7 7c0 5 4 10 7 11 3-1 7-6 7-11a7 7 0 00-7-7zM9 10h.01M15 10h.01M9.5 15c1.5 1 3.5 1 5 0',t:['Nettoyage','Eclat']},
- {fr:'Soin a Froid (cheveux)',ar:'علاج بارد للشعر',p:6000,i:'M12 2v20M4.9 7l14.2 10M4.9 17L19.1 7',t:['Cheveux']},
- {fr:'Soin Capillaire',ar:'علاج الشعر',p:8000,i:'M5 3c4 3 4 15 0 18M12 3c4 3 4 15 0 18M19 3c-2 3-2 15 0 18',t:['Cheveux','Reparation']},
- {fr:'Coupe + Brushing',ar:'قص + برشينغ',p:1000,i:'M6 6a3 3 0 100 6 3 3 0 000-6zM6 18a3 3 0 100-6M8.5 10.5L20 4M8.5 13.5L20 20',t:['Coiffure']},
- {fr:'Ondule + Maquillage',ar:'تمويج + مكياج',p:6000,i:'M3 9c3-4 6 4 9 0s6 4 9 0M3 16c3-4 6 4 9 0s6 4 9 0',t:['Coiffure','Maquillage']},
- {fr:'Maquillage Invitee + Coiffure',ar:'مكياج وتسريحة للمدعوات',p:6000,i:'M5 21l6-10 3 3-6 7zM14 8l3-5 4 4-5 3',t:['Soiree']},
- {fr:'Mariee',ar:'العروس',p:16000,i:'M4 8l4 4 4-7 4 7 4-4-2 11H6z',t:['Forfait complet']}
-];
-const T={fr:{n1:'A propos',n2:'Services',n3:'Galerie',n4:'Reservation',n5:'Infos',hs:"Coiffure, maquillage et soins de beaute a Bab Ezzouar, Alger. Prenez rendez-vous en quelques secondes.",b1:'Reserver',s1:'services',s2:'jours par semaine',s3:'horaires',s4:'Alger',ah:'Le salon',a1:"Dehlams Beauty est un salon de beaute a Bab Ezzouar, dedie a la coiffure, aux soins et au maquillage, du quotidien aux grandes occasions.",a2:"Chaque rendez-vous est pense pour vous: ecoute, soin du detail et resultat qui vous ressemble.",role:'Fondatrice',sh:'Nos services',ss:'Tarifs a partir de, selon la longueur et le type de prestation.',gh:'Galerie',bh:'Reserver un rendez-vous',bs:'Remplissez le formulaire: nous vous confirmons sur WhatsApp.',fn:'Nom complet',fp:'Telephone',fs:'Service',fd:'Date',ft:'Heure',send:'Envoyer la reservation',okh:'Reservation envoyee',okp:'Merci. Nous vous confirmons votre rendez-vous tres vite sur WhatsApp.',okw:'Ouvrir WhatsApp',ih:'Horaires',d1:'Samedi - Jeudi',d2:'Vendredi',cl:'Ferme',ch:'Contact',loc:'Bab Ezzouar, Alger (Google Maps)',rh:'Reseaux',from:'A partir de',da:'DA',pick:'Choisir un service',e1:'Entrez votre nom (2 caracteres minimum).',e2:'Numero algerien invalide (ex: 0558609806).',e3:'Choisissez un service.',e4:'Choisissez une date.',e5:'Le salon est ferme le vendredi.',e6:'Choisissez une heure.',e7:"Echec de l'envoi. Reessayez ou ecrivez-nous sur WhatsApp.",msg:(b)=>`Bonjour Dehlams Beauty, je souhaite reserver:\nNom: ${b.name}\nService: ${b.service}\nDate: ${b.date}\nHeure: ${b.time}\nTel: ${b.phone}`},
-ar:{n1:'عن الصالون',n2:'الخدمات',n3:'المعرض',n4:'الحجز',n5:'معلومات',hs:'تصفيف الشعر، مكياج وعناية بالجمال في باب الزوار، الجزائر. احجزي موعدك في ثوان.',b1:'احجزي الآن',s1:'خدمات',s2:'أيام في الأسبوع',s3:'أوقات العمل',s4:'الجزائر',ah:'عن الصالون',a1:'ديهلامس بيوتي صالون تجميل في باب الزوار، مخصص لتصفيف الشعر والعناية والمكياج، من الإطلالة اليومية إلى المناسبات الكبرى.',a2:'كل موعد مصمم من أجلك: إصغاء واهتمام بالتفاصيل ونتيجة تشبهك.',role:'المؤسسة',sh:'خدماتنا',ss:'الأسعار ابتداءً من، حسب الطول ونوع الخدمة.',gh:'المعرض',bh:'احجزي موعدا',bs:'املئي الاستمارة وسنؤكد لك عبر واتساب.',fn:'الاسم الكامل',fp:'الهاتف',fs:'الخدمة',fd:'التاريخ',ft:'الساعة',send:'إرسال الحجز',okh:'تم إرسال الحجز',okp:'شكرا لك. سنؤكد موعدك قريبا عبر واتساب.',okw:'افتحي واتساب',ih:'أوقات العمل',d1:'السبت - الخميس',d2:'الجمعة',cl:'مغلق',ch:'اتصال',loc:'باب الزوار، الجزائر (خرائط جوجل)',rh:'التواصل',from:'ابتداءً من',da:'دج',pick:'اختاري خدمة',e1:'أدخلي اسمك (حرفان على الأقل).',e2:'رقم جزائري غير صالح (مثال: 0558609806).',e3:'اختاري خدمة.',e4:'اختاري تاريخا.',e5:'الصالون مغلق يوم الجمعة.',e6:'اختاري ساعة.',e7:'فشل الإرسال. أعيدي المحاولة أو راسلينا على واتساب.',msg:(b)=>`مرحبا ديهلامس بيوتي، أريد حجز موعد:\nالاسم: ${b.name}\nالخدمة: ${b.service}\nالتاريخ: ${b.date}\nالساعة: ${b.time}\nالهاتف: ${b.phone}`}};
-let L='fr';
-const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g,' ');
+{c:0,fr:'Nails',ar:'أظافر',p:2000,i:'M8 21V9a4 4 0 018 0v12M8 13h8',t:['Manucure','Nail art']},
+{c:0,fr:'Soin des Pieds',ar:'عناية بالقدمين',p:2500,i:'M12 3c-3 4-5 7-5 10a5 5 0 0010 0c0-3-2-6-5-10z',t:['Pedicure']},
+{c:0,fr:'Soin du Visage',ar:'عناية بالوجه',p:3000,i:'M12 3a7 7 0 00-7 7c0 5 4 10 7 11 3-1 7-6 7-11a7 7 0 00-7-7zM9 10h.01M15 10h.01M9.500 15c1.500 1 3.500 1 5 0',t:['Eclat']},
+{c:1,fr:'Soin a Froid (cheveux)',ar:'علاج بارد للشعر',p:6000,i:'M12 2v20M4.900 7l14.200 10M4.900 17L19.100 7',t:['Cheveux']},
+{c:1,fr:'Soin Capillaire',ar:'علاج الشعر',p:8000,pre:1,i:'M5 3c4 3 4 15 0 18M12 3c4 3 4 15 0 18M19 3c-2 3-2 15 0 18',t:['Cheveux']},
+{c:1,fr:'Coupe + Brushing',ar:'قص + برشينغ',p:1000,i:'M6 6a3 3 0 100 6 3 3 0 000-6zM6 18a3 3 0 100-6M8.500 10.500L20 4M8.500 13.500L20 20',t:['Coiffure']},
+{c:2,fr:'Ondule + Maquillage',ar:'تمويج + مكياج',p:6000,i:'M3 9c3-4 6 4 9 0s6 4 9 0M3 16c3-4 6 4 9 0s6 4 9 0',t:['Coiffure','Maquillage']},
+{c:2,fr:'Maquillage Invitee + Coiffure',ar:'مكياج وتسريحة للمدعوات',p:6000,i:'M5 21l6-10 3 3-6 7zM14 8l3-5 4 4-5 3',t:['Soiree']},
+{c:2,fr:'Mariee',ar:'العروس',p:16000,i:'M4 8l4 4 4-7 4 7 4-4-2 11H6z',t:['Forfait complet']}];
+const RU=[['M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z','ru1'],['M12 3l2 5 5 .5-4 3.500 1.500 5L12 14.500 7.500 17 9 12 5 8.500 10 8z','ru2'],['M5 12a7 7 0 0114 0M9 17h6M12 12v5','ru3'],['M4 12l5 5L20 6','ru4'],['M5 5l14 14M12 3a9 9 0 100 18 9 9 0 000-18z','ru5'],['M3 7h18v10H3zM3 11h18','ru6']];
+const T={fr:{n1:'A propos',n2:'Services',n3:'Tarifs',n4:'Galerie',n5:'Reservation',n6:'Reglement',n7:'Contact',loc0:'Bab Ezzouar - Alger',hs:'Coiffure, maquillage et soins de beaute. Prenez rendez-vous en quelques secondes.',b1:'Reserver',s1:'services',s2:'jours par semaine',s3:'heures par jour',s4:'clientes satisfaites',ah:'Le salon',a1:'Dehlams Beauty est un salon de beaute a Bab Ezzouar, dedie a la coiffure, aux soins et au maquillage, du quotidien aux grandes occasions.',a2:'Chaque rendez-vous est pense pour vous: ecoute, soin du detail et resultat qui vous ressemble.',role:'Fondatrice',sh:'Nos services',ss:'Tarifs a partir de, selon la longueur et le type de prestation.',th:'Liste des tarifs',sr:'Rechercher un service...',none:'Aucun service trouve.',book:'Reserver',from:'A partir de',da:'DA',gh:'Galerie',gm:'Voir toute la galerie',gl:'Reduire',bh:'Reserver un rendez-vous',bs:'Choisissez un ou plusieurs services: nous vous confirmons sur WhatsApp.',r1:'Ouvert tous les jours de 09h a 16h',r2:'Ferme le vendredi',r3:'Confirmation par WhatsApp',fn:'Nom complet',fp:'Telephone',fs:'Services',fd:'Date',ft:'Heure',pick:'Choisir un ou plusieurs services',nsel:'service(s)',send:'Envoyer la reservation',okh:'Reservation envoyee',okp:'Merci. Nous vous confirmons votre rendez-vous tres vite sur WhatsApp.',okw:'Ouvrir WhatsApp',rh:'Reglement du salon',rs:'Une charte pour une experience sereine et soignee.',ru1:['Ponctualite','Merci d\'arriver a l\'heure pour respecter les autres clientes.'],ru2:['Hygiene','Materiel propre et soigneusement desinfecte.'],ru3:['Ambiance calme','Un espace paisible pour votre detente.'],ru4:['Sterilisation','Outils steriliser apres chaque prestation.'],ru5:['Ni cigarette, ni repas','Non fumeur et sans nourriture dans le salon.'],ru6:['Paiement au salon','Le reglement se fait sur place, apres la prestation.'],ih:'Horaires',d1:'Samedi - Jeudi',d2:'Vendredi',cl:'Ferme',ch:'Contact',loc:'Bab Ezzouar, Alger (Google Maps)',rsx:'Reseaux',e1:'Nom: 3 caracteres minimum.',e2:'Numero algerien invalide (ex: 0558609806).',e3:'Choisissez au moins un service.',e4:'Choisissez une date.',e5:'Le salon est ferme le vendredi.',e6:'Choisissez une heure.',e7:'Ce creneau est deja pris. Choisissez une autre heure.',e8:'Echec de l\'envoi. Reessayez ou ecrivez-nous sur WhatsApp.',msg:b=>`Bonjour Dehlams Beauty, je souhaite reserver:\nNom: ${b.name}\nServices: ${b.service}\nDate: ${b.date}\nHeure: ${b.time}\nTel: ${b.phone}`},
+ar:{n1:'عن الصالون',n2:'الخدمات',n3:'الأسعار',n4:'المعرض',n5:'الحجز',n6:'القوانين',n7:'اتصال',loc0:'باب الزوار - الجزائر',hs:'تصفيف الشعر، مكياج وعناية بالجمال. احجزي موعدك في ثوان.',b1:'احجزي الآن',s1:'خدمات',s2:'أيام في الأسبوع',s3:'ساعات يوميا',s4:'زبونة راضية',ah:'عن الصالون',a1:'ديهلامس بيوتي صالون تجميل في باب الزوار، مخصص لتصفيف الشعر والعناية والمكياج، من الإطلالة اليومية إلى المناسبات الكبرى.',a2:'كل موعد مصمم من أجلك: إصغاء واهتمام بالتفاصيل ونتيجة تشبهك.',role:'المؤسسة',sh:'خدماتنا',ss:'الأسعار ابتداءً من، حسب الطول ونوع الخدمة.',th:'قائمة الأسعار',sr:'ابحثي عن خدمة...',none:'لا توجد خدمة مطابقة.',book:'احجزي',from:'ابتداءً من',da:'دج',gh:'المعرض',gm:'عرض كل الصور',gl:'عرض أقل',bh:'احجزي موعدا',bs:'اختاري خدمة أو أكثر وسنؤكد لك عبر واتساب.',r1:'مفتوح كل يوم من 09:00 إلى 16:00',r2:'مغلق يوم الجمعة',r3:'التأكيد عبر واتساب',fn:'الاسم الكامل',fp:'الهاتف',fs:'الخدمات',fd:'التاريخ',ft:'الساعة',pick:'اختاري خدمة أو أكثر',nsel:'خدمة',send:'إرسال الحجز',okh:'تم إرسال الحجز',okp:'شكرا لك. سنؤكد موعدك قريبا عبر واتساب.',okw:'افتحي واتساب',rh:'قوانين الصالون',rs:'ميثاق لتجربة هادئة ومميزة.',ru1:['الالتزام بالموعد','يرجى الحضور في الوقت المحدد احتراما لباقي الزبونات.'],ru2:['النظافة','أدوات نظيفة ومعقمة بعناية.'],ru3:['أجواء هادئة','مكان هادئ لراحتك.'],ru4:['التعقيم','تعقيم الأدوات بعد كل خدمة.'],ru5:['ممنوع التدخين والأكل','الصالون خال من التدخين والطعام.'],ru6:['الدفع في الصالون','الدفع يتم في المكان بعد الخدمة.'],ih:'أوقات العمل',d1:'السبت - الخميس',d2:'الجمعة',cl:'مغلق',ch:'اتصال',loc:'باب الزوار، الجزائر (خرائط جوجل)',rsx:'التواصل',e1:'الاسم: 3 أحرف على الأقل.',e2:'رقم جزائري غير صالح (مثال: 0558609806).',e3:'اختاري خدمة واحدة على الأقل.',e4:'اختاري تاريخا.',e5:'الصالون مغلق يوم الجمعة.',e6:'اختاري ساعة.',e7:'هذا الموعد محجوز. اختاري ساعة أخرى.',e8:'فشل الإرسال. أعيدي المحاولة أو راسلينا على واتساب.',msg:b=>`مرحبا ديهلامس بيوتي، أريد حجز موعد:\nالاسم: ${b.name}\nالخدمات: ${b.service}\nالتاريخ: ${b.date}\nالساعة: ${b.time}\nالهاتف: ${b.phone}`}};
+let L='fr',sel=new Set();
+const fmt=n=>n.toLocaleString('fr-FR').replace(/[\u202f\u00a0]/g,' ');
+const row=s=>`<div class="tr"><span>${s[L]}</span><i></i><b>${s.pre?T[L].from+' ':''}${fmt(s.p)} ${T[L].da}</b></div>`;
+function card(s){const t=T[L];return `<article class="sv"><svg viewBox="0 0 24 24"><path d="${s.i}"/></svg><h3>${s[L]}</h3><small>${t.from}</small><span class="pr">${fmt(s.p)} ${t.da}</span><div class="tags">${s.t.map(x=>`<span class="tag">${x}</span>`).join('')}</div><button class="btn" data-pick="${SV.indexOf(s)}">${t.book}</button></article>`}
 function render(){
  const t=T[L];document.documentElement.lang=L;document.documentElement.dir=L=='ar'?'rtl':'ltr';
  document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t[e.dataset.i]);
- $('#lb').textContent=L=='fr'?'العربية':'Francais';
- $('#sg').innerHTML=SV.map(s=>`<article class="sv rv in"><svg viewBox="0 0 24 24"><path d="${s.i}"/></svg><h3>${s[L]}</h3><small>${t.from}</small><span class="pr">${fmt(s.p)} ${t.da}</span>${s.t.map(x=>`<span class="tag">${x}</span>`).join('')}</article>`).join('');
- const sv=$('#sv'),cur=sv.value;
- sv.innerHTML=`<option value="">${t.pick}</option>`+SV.map(s=>`<option value="${s.fr}">${s[L]} - ${fmt(s.p)} ${t.da}</option>`).join('');sv.value=cur;
+ $('#lb').textContent=L=='fr'?'العربية':'Francais';$('#ts').placeholder=t.sr;
+ $('#g1').innerHTML=SV.slice(0,6).map(card).join('');$('#g2').innerHTML=SV.slice(6).map(card).join('');
+ $('#tc').innerHTML=C.map((c,k)=>`<div class="cat"><h3>${c[L]}</h3>${SV.filter(s=>s.c==k).map(row).join('')}</div>`).join('');filt();
+ $('#pl').innerHTML=C.map((c,k)=>`<b>${c[L]}</b>`+SV.map((s,j)=>s.c==k?`<label><input type="checkbox" data-s="${j}" ${sel.has(j)?'checked':''}>${s[L]} - ${fmt(s.p)} ${t.da}</label>`:'').join('')).join('');
+ chips();
+ $('#rg').innerHTML=RU.map(r=>`<div class="rc rv in"><div class="ic"><svg viewBox="0 0 24 24"><path d="${r[0]}"/></svg></div><div><h3>${t[r[1]][0]}</h3><p>${t[r[1]][1]}</p></div></div>`).join('');
+ $('#gt').textContent=$('#ga').classList.contains('all')?t.gl:t.gm;
 }
+function chips(){const t=T[L];$('#pb').textContent=sel.size?sel.size+' '+t.nsel:t.pick;
+ $('#ch').innerHTML=[...sel].map(j=>`<span class="service-chip">${SV[j][L]}<button type="button" data-rm="${j}" aria-label="remove">&times;</button></span>`).join('')}
+function filt(){const q=$('#ts').value.trim().toLowerCase();let any=0;
+ document.querySelectorAll('.cat').forEach(c=>{let n=0;c.querySelectorAll('.tr').forEach(r=>{const m=!q||r.textContent.toLowerCase().includes(q);r.style.display=m?'':'none';n+=m});c.style.display=n?'':'none';any+=n});
+ $('#te').style.display=any?'none':'block'}
+$('#ts').oninput=filt;
 $('#lb').onclick=()=>{L=L=='fr'?'ar':'fr';render()};
+$('#gt').onclick=()=>{$('#ga').classList.toggle('all');render()};
+$('#pb').onclick=e=>{e.stopPropagation();const o=$('#pl').classList.toggle('open');$('#pb').setAttribute('aria-expanded',o)};
+$('#pl').onclick=e=>e.stopPropagation();
+document.addEventListener('click',e=>{$('#pl').classList.remove('open');
+ const k=e.target.closest('[data-pick]');if(k){sel.add(+k.dataset.pick);render();$('#booking').scrollIntoView({behavior:'smooth'})}
+ const r=e.target.closest('[data-rm]');if(r){sel.delete(+r.dataset.rm);render()}});
+$('#pl').addEventListener('change',e=>{const j=+e.target.dataset.s;e.target.checked?sel.add(j):sel.delete(j);chips()});
+const dr=$('#dr');$('#bg').onclick=()=>dr.classList.add('open');$('#dx').onclick=()=>dr.classList.remove('open');dr.querySelectorAll('a').forEach(a=>a.onclick=()=>dr.classList.remove('open'));
+addEventListener('scroll',()=>$('#nv').classList.toggle('sc',scrollY>40),{passive:true});
+$('#yr').textContent=new Date().getFullYear();
 const tm=$('#tm');tm.innerHTML='<option value="">--:--</option>';
 for(let h=9;h<16;h++)['00','30'].forEach(m=>tm.insertAdjacentHTML('beforeend',`<option>${String(h).padStart(2,'0')}:${m}</option>`));
 const today=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);$('#dt').min=today;
 render();
 
-function bad(id,msg){const f=$(id).closest('.f');f.classList.add('err');f.querySelector('.em').textContent=T[L][msg];return 1}
+function bad(id,m){const f=$(id).closest('.f');f.classList.add('err');f.querySelector('.em').textContent=T[L][m];return 1}
 $('#bf').addEventListener('submit',async e=>{
  e.preventDefault();
  document.querySelectorAll('.f').forEach(f=>{f.classList.remove('err');f.querySelector('.em').textContent=''});$('#fe').textContent='';
- const name=$('#nm').value.trim(),phone=$('#ph').value.replace(/[\s.\-()]/g,''),service=$('#sv').value,date=$('#dt').value,time=$('#tm').value;
+ const name=$('#nm').value.trim(),phone=$('#ph').value.replace(/[\s.\-()]/g,''),date=$('#dt').value,time=$('#tm').value;
  let er=0;
- if(name.length<2)er+=bad('#nm','e1');
+ if(name.length<3)er+=bad('#nm','e1');
  if(!/^(0|\+213|00213)[567]\d{8}$/.test(phone))er+=bad('#ph','e2');
- if(!service)er+=bad('#sv','e3');
+ if(!sel.size)er+=bad('#pb','e3');
  if(!date||date<today)er+=bad('#dt','e4');else if(new Date(date+'T12:00').getDay()===5)er+=bad('#dt','e5');
  if(!time)er+=bad('#tm','e6');
  if(er)return;
+ const w=window.open('','_blank'); // pre-ouverture (Safari/iOS)
  const b=$('#sb');b.disabled=true;b.classList.add('load');
- const id='bk_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
- const rec={id,name,phone,service,date,time,appointment:date+' '+time,status:'new',source:'website',createdAt:new Date().toISOString()};
+ const service=[...sel].map(j=>SV[j].fr).join(' • '),id='bk_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+ const rec={id,name,phone,service,date,time,appointment:date+' '+time,status:'new',source:'website'};
  try{
-  await db.ref(PROJECT+'/bookings/'+id).set(rec);
-  const url='https://wa.me/'+WA+'?text='+encodeURIComponent(T[L].msg(rec));
+  const slot=db.ref(`${P}/takenSlots/${date}_${time}`);
+  const tr=await slot.transaction(c=>c?undefined:true); // verrou atomique anti double-reservation
+  if(!tr.committed){if(w)w.close();$('#fe').textContent=T[L].e7;throw 0}
+  try{await db.ref(`${P}/bookings/${id}`).set({...rec,createdAt:firebase.database.ServerValue.TIMESTAMP})}
+  catch(x){await slot.remove();throw x}
+  const url=`https://wa.me/${WA}?text=`+encodeURIComponent(T[L].msg(rec));
   $('#wa').href=url;$('#bf').style.display='none';$('#ok').style.display='block';
-  window.open(url,'_blank');
- }catch(x){console.error(x);$('#fe').textContent=T[L].e7}
+  if(w)w.location=url;
+ }catch(x){if(x!==0){console.error(x);if(w)w.close();$('#fe').textContent=T[L].e8}}
  b.disabled=false;b.classList.remove('load');
 });
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* reveal + count-up */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting)return;const el=x.target;io.unobserve(el);el.classList.add('in');
+ if(el.dataset.n){const n=+el.dataset.n,s=el.dataset.x||'',r=matchMedia('(prefers-reduced-motion:reduce)').matches;let k=0;
+  const st=()=>{k+=Math.max(1,n/40);if(k>=n||r){el.textContent=n+s}else{el.textContent=Math.round(k)+s;requestAnimationFrame(st)}};st()}}),{threshold:.15});
+document.querySelectorAll('.rv,[data-n]').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
