@@ -81,7 +81,7 @@ h2{font-size:1rem;margin-bottom:10px;color:var(--bronze)}
 <div><label for="an">Nom</label><input id="an" required></div>
 <div><label for="ap">Telephone</label><input id="ap" type="tel" inputmode="tel" required></div>
 <div><label>Services</label><div class="pk"><button type="button" class="pb" id="pb"></button><div id="pl"></div></div><div id="ch"></div></div>
-<div class="r2"><div><label for="ad">Date</label><input id="ad" type="date" required></div><div><label for="at">Heure</label><input id="at" type="time" min="09:00" max="16:00" value="09:00" required></div></div>
+<div class="r2"><div><label for="ad">Date</label><input id="ad" type="date" required></div><div><label for="at">Heure</label><input id="at" type="time" min="08:00" max="20:00" value="08:00" required></div></div>
 <div><label for="ano">Note (optionnel)</label><textarea id="ano" rows="3"></textarea></div>
 <button class="btn" type="submit">Ajouter la reservation</button></form></div>
 </div>
@@ -96,7 +96,7 @@ firebase.initializeApp({apiKey:"AIzaSyB1cJLjpq7qyfxmOcX8kf-SpsxB8WvTMZk",authDom
  databaseURL:"https://dehlams-beauty-default-rtdb.europe-west1.firebasedatabase.app", // a verifier dans Firebase > Realtime Database
  projectId:"dehlams-beauty",storageBucket:"dehlams-beauty.firebasestorage.app",messagingSenderId:"1084905496655",appId:"1:1084905496655:web:6b9190a6fe619c59164a3a"});
 const db=firebase.database(),ref=db.ref(P+'/bookings'),$=s=>document.querySelector(s);
-const SV=[['Ongles et soins','Nails','Soin des Pieds','Soin du Visage'],['Cheveux','Soin a Froid (cheveux)','Soin Capillaire','Coupe + Brushing'],['Maquillage et coiffure','Ondule + Maquillage','Maquillage Invitee + Coiffure','Mariee']];
+const SV=[['Ongles et soins','Nails','Soin des Pieds','Soin du Visage'],['Cheveux','Soin a Froid (cheveux)','Soin Capillaire','Coupe + Brushing','Meches','Coloration','Lissage'],['Maquillage et coiffure','Ondule + Maquillage','Maquillage Invitee + Coiffure','Mariee']];
 const SL={new:'Nouvelle',confirmed:'Confirmee',done:'Terminee',cancelled:'Annulee'};
 let data=[],on=false,sel=new Set();
 const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)};
